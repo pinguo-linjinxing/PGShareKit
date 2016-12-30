@@ -7,15 +7,9 @@
 //
 
 #import "PGShareKitBLL.h"
+#import "PGSKTypes.h"
 
 
-/**
-   加载配置->显示选择器->获取分享数据类型->分享数据
-
- @param param <#param description#>
- @param success <#success description#>
- @param fail <#fail description#>
- */
-void PGShareKitBLLShare(NSDictionary* param, PGSKSuccessBlock success, PGSKFailBlock fail){
+void PGShareKitBLLShare(PGShareKitBLLGetSharInfo getParamBlock, PGSKSuccessBlock success, PGSKFailBlock fail){
     
 }

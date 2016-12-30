@@ -12,10 +12,9 @@
 
 @protocol PGSKServiceDelegate;
 
-@end
 
 @protocol PGSKService
-@property(nonatomic, weak) PGSKServiceDelegate delegate;
+@property(nonatomic, weak) id<PGSKServiceDelegate> delegate;
 @property(nonatomic, readonly) id<PGSKServiceInfo> info;
 @property(nonatomic, readonly) BOOL isInstalled;
 @property(nonatomic, readonly) BOOL isInitDone;

@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import "PGSKServiceInfo.h"
-#import "BlocksDefines.h"
+#import "PGSKTypes.h"
 
 typedef void(^PGSKConfigLoadServiceSuccess)(NSArray<id<PGSKServiceInfo>>*services);
 

@@ -8,17 +8,6 @@
 
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
-/**
- 支持的数据类型定义
- */
-typedef enum tagPGSKServiceSupportedDataType{
-    PGSKServiceSupportedDataTypeText = 1 << 0,
-    PGSKServiceSupportedDataTypeImage = 1 << 1,
-    PGSKServiceSupportedDataTypeMultiImages = 1 << 2,
-    PGSKServiceSupportedDataTypeGif = 1 << 3,
-    PGSKServiceSupportedDataTypeVideo = 1 << 4,
-    PGSKServiceSupportedDataTypeWebPage = 1 << 5
-}PGSKServiceSupportedDataType;
 
 
 @protocol PGSKServiceDataText <NSObject>

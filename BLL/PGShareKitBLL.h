@@ -7,8 +7,15 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "BlocksDefines.h"
+#import "PGSKTypes.h"
 
+typedef NSDictionary* (^PGShareKitBLLGetSharInfo)(PGSKServiceSupportedDataType type);
 
-
-void PGShareKitBLLShare(NSDictionary* param, PGSKSuccessBlock success, PGSKFailBlock fail);
+/**
+ 加载配置->显示选择器->获取分享数据类型->分享数据
+ 
+ @param getParamBlock 调用者需要实现这个block,根据type传数据
+ @param success 成功回调
+ @param fail 失败回调
+ */
+void PGShareKitBLLShare(PGShareKitBLLGetSharInfo getParamBlock, PGSKSuccessBlock success, PGSKFailBlock fail);

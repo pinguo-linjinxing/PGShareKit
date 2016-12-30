@@ -23,6 +23,7 @@
 		6828645D1E15B27D00D56F43 /* PGSKService.m in Sources */ = {isa = PBXBuildFile; fileRef = 6828645A1E15B27D00D56F43 /* PGSKService.m */; };
 		682864611E15B39400D56F43 /* PGShareKitBLL.m in Sources */ = {isa = PBXBuildFile; fileRef = 682864601E15B39400D56F43 /* PGShareKitBLL.m */; };
 		682864651E15BBA300D56F43 /* CopyWritingFormat.m in Sources */ = {isa = PBXBuildFile; fileRef = 682864641E15BBA300D56F43 /* CopyWritingFormat.m */; };
+		68A09B1F1E164D7800521DA3 /* PGSKServiceQQ.m in Sources */ = {isa = PBXBuildFile; fileRef = 68A09B1E1E164D7800521DA3 /* PGSKServiceQQ.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -67,7 +68,7 @@
 		6828644A1E159BD500D56F43 /* PGSKServiceSelectorController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PGSKServiceSelectorController.h; sourceTree = "<group>"; };
 		6828644B1E159BD500D56F43 /* PGSKServiceSelectorController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PGSKServiceSelectorController.m; sourceTree = "<group>"; };
 		6828644D1E15A03400D56F43 /* PGSKServiceSelector.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PGSKServiceSelector.h; sourceTree = "<group>"; };
-		682864501E15A29500D56F43 /* BlocksDefines.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BlocksDefines.h; sourceTree = "<group>"; };
+		682864501E15A29500D56F43 /* PGSKTypes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PGSKTypes.h; sourceTree = "<group>"; };
 		682864571E15B27D00D56F43 /* PGSKServiceData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PGSKServiceData.h; sourceTree = "<group>"; };
 		682864581E15B27D00D56F43 /* PGSKServiceData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PGSKServiceData.m; sourceTree = "<group>"; };
 		682864591E15B27D00D56F43 /* PGSKService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PGSKService.h; sourceTree = "<group>"; };
@@ -77,6 +78,8 @@
 		682864601E15B39400D56F43 /* PGShareKitBLL.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PGShareKitBLL.m; sourceTree = "<group>"; };
 		682864631E15BBA300D56F43 /* CopyWritingFormat.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CopyWritingFormat.h; sourceTree = "<group>"; };
 		682864641E15BBA300D56F43 /* CopyWritingFormat.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CopyWritingFormat.m; sourceTree = "<group>"; };
+		68A09B1D1E164D7800521DA3 /* PGSKServiceQQ.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PGSKServiceQQ.h; sourceTree = "<group>"; };
+		68A09B1E1E164D7800521DA3 /* PGSKServiceQQ.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PGSKServiceQQ.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -205,7 +208,7 @@
 		6828644E1E15A0CE00D56F43 /* Foundation */ = {
 			isa = PBXGroup;
 			children = (
-				682864501E15A29500D56F43 /* BlocksDefines.h */,
+				682864501E15A29500D56F43 /* PGSKTypes.h */,
 			);
 			path = Foundation;
 			sourceTree = "<group>";
@@ -218,6 +221,8 @@
 				682864591E15B27D00D56F43 /* PGSKService.h */,
 				6828645A1E15B27D00D56F43 /* PGSKService.m */,
 				6828645B1E15B27D00D56F43 /* PGSKServiceInfo.h */,
+				68A09B1D1E164D7800521DA3 /* PGSKServiceQQ.h */,
+				68A09B1E1E164D7800521DA3 /* PGSKServiceQQ.m */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -390,6 +395,7 @@
 				6828645D1E15B27D00D56F43 /* PGSKService.m in Sources */,
 				682864651E15BBA300D56F43 /* CopyWritingFormat.m in Sources */,
 				6828644C1E159BD500D56F43 /* PGSKServiceSelectorController.m in Sources */,
+				68A09B1F1E164D7800521DA3 /* PGSKServiceQQ.m in Sources */,
 				682864401E1597DF00D56F43 /* PGSKConfig.m in Sources */,
 				682864061E153B1000D56F43 /* main.m in Sources */,
 			);
@@ -623,6 +629,7 @@
 				682864301E153B1100D56F43 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		682864311E153B1100D56F43 /* Build configuration list for PBXNativeTarget "PGShareKitTests" */ = {
 			isa = XCConfigurationList;
@@ -631,6 +638,7 @@
 				682864331E153B1100D56F43 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		682864341E153B1100D56F43 /* Build configuration list for PBXNativeTarget "PGShareKitUITests" */ = {
 			isa = XCConfigurationList;
@@ -639,6 +647,7 @@
 				682864361E153B1100D56F43 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

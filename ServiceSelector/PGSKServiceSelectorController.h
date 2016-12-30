@@ -10,7 +10,7 @@
 #import <UIKit/UIKit.h>
 #import "PGSKServiceInfo.h"
 #import "PGSKServiceSelectorView.h"
-#import "BlocksDefines.h"
+#import "PGSKTypes.h"
 
 //@protocol PGSKServiceSelector <NSObject>
 //

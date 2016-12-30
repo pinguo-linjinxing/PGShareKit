@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import "PGSKServiceData.h"
-
+#import "PGSKTypes.h"
 /**
  各社交平台属性定义
  */
