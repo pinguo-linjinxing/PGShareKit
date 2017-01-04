@@ -30,10 +30,10 @@
 - (void)service:(id<PGSKService>)service didShareSuccess:(id)param;
 - (void)service:(id<PGSKService>)service didFail:(NSError *)error;
 - (void)serviceDidCancel:(id<PGSKService>)service;
-- (void)service:(id<PGSKService>)service didReceiveRequest:(id)param;
+//- (void)service:(id<PGSKService>)service didReceiveRequest:(id)param;
 //- (void)serviceDidLogined:(id<PGSKService>)service;
 //- (void)serviceWillShare:(id<PGSKService>)service;
-- (void)serviceDidInitDone:(id<PGSKService>)service;
+//- (void)serviceDidInitDone:(id<PGSKService>)service;
 @end
 
 
