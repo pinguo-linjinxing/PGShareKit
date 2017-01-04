@@ -17,7 +17,7 @@
 @property(nonatomic, readonly, strong) NSString* key;
 @property(nonatomic, readonly, strong) NSString* appKey;
 @property(nonatomic, readonly, strong) NSString* appSecret;
-@property(nonatomic, readonly, strong) NSURL* sloganUrl;
+@property(nonatomic, readonly, strong) UIImage* slogan;
 @property(nonatomic, readonly, assign) PGSKServiceSupportedDataType supportedShareType;
 @end
 

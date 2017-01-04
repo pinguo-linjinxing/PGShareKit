@@ -7,6 +7,7 @@
 //
 
 #import "PGSKServiceData.h"
+#import "PGSKTypes.h"
 
 @interface PGSKServiceDataImagePOD()
 @property(nonatomic) NSString* title;
@@ -44,5 +45,15 @@
 
 @end
 
+
+
+
+Class PGShareKitData(PGSKServiceSupportedDataType type){
+    return [@{@(PGSKServiceSupportedDataTypeImage):[PGSKServiceDataImagePOD class],
+              @(PGSKServiceSupportedDataTypeVideo):[PGSKServiceDataVideo class],
+              @(PGSKServiceSupportedDataTypeWebPage):[PGSKServiceDataWebPage class]
+              }
+            objectForKey:@(type)];
+}
 
 

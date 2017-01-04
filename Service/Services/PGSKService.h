@@ -26,7 +26,7 @@
 
 @protocol PGSKServiceDelegate <NSObject>
 @optional
-- (void)service:(id<PGSKService>)service didShareSuccess:(id)param;
+- (void)service:(id<PGSKService>)service didSuccess:(id)param;
 - (void)service:(id<PGSKService>)service didFail:(NSError *)error;
 - (void)serviceDidCancel:(id<PGSKService>)service;
 //- (void)service:(id<PGSKService>)service didReceiveRequest:(id)param;
@@ -36,10 +36,10 @@
 @end
 
 
+Class PGShareKitService(id<PGSKServiceInfo> serviceInfo);
+SEL PGShareKitSelector(PGSKServiceSupportedDataType type);
 
 
-//@interface PGSKServiceInfo : NSObject
-//
-//@end
-//
-//
+
+
+

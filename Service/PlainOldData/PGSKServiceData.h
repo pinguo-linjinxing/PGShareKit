@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
-
+#import "PGSKTypes.h"
 
 //@protocol PGSKServiceDataText <NSObject>
 //@property(nonatomic, readonly) NSString* title;
@@ -58,7 +58,7 @@
 
 
 
-
+Class PGShareKitData(PGSKServiceSupportedDataType type);
 
 
 

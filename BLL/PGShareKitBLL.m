@@ -9,11 +9,10 @@
 #import "PGShareKitBLL.h"
 #import "PGSKTypes.h"
 #import "PGSKServiceType.h"
-#import "PGSKConfig.h"
+#import "PGSKService.h"
 #import "PGSKServiceSelectorController.h"
-#import "PGSKServiceQQ.h"
-#import "PGSKServiceWechat.h"
 #import "PGSKServiceData.h"
+
 #import <ReactiveCocoa/ReactiveCocoa.h>
 
 NSString *const PKSGServiceDataDictKeyAuthor       = @"author";
@@ -26,28 +25,8 @@ NSString *const PKSGServiceDataDictKeyURL          = @"URL";
 NSString *const PKSGServiceDataDictKeyDataType     = @"supportedShareType";
 
 
-static Class PGShareKitService(id<PGSKServiceInfo> serviceInfo){
-    return [@{PKSGServiceTypeWechat:[PGSKServiceWechat class],
-              PKSGServiceTypeWechat:[PGSKServiceQQ class]
-              }
-            valueForKey:serviceInfo.name];
-}
 
-static Class PGShareKitData(PGSKServiceSupportedDataType type){
-    return [@{@(PGSKServiceSupportedDataTypeImage):[PGSKServiceDataImagePOD class],
-              @(PGSKServiceSupportedDataTypeVideo):[PGSKServiceDataVideo class],
-              @(PGSKServiceSupportedDataTypeWebPage):[PGSKServiceDataWebPage class]
-              }
-            objectForKey:@(type)];
-}
 
-static SEL PGShareKitSelector(PGSKServiceSupportedDataType type){
-    NSString* selector = [@{@(PGSKServiceSupportedDataTypeText):NSStringFromSelector(@selector(shareText:)),
-              @(PGSKServiceSupportedDataTypeImage):NSStringFromSelector(@selector(shareImage:))
-              }
-            objectForKey:@(type)];
-    return NSSelectorFromString(selector);
-}
 
 void PGShareKitBLLShare(PGShareKitBLLGetSharInfo getParamBlock,
                         PGSKSuccessBlock success,
@@ -79,13 +58,17 @@ void PGShareKitBLLShare(PGShareKitBLLGetSharInfo getParamBlock,
                  assert(nil != dict[PKSGServiceDataDictKeyDataType]);
 //                 NSAssert(nil != dict[PKSGServiceDataDictKeyDataType], @"PKSGServiceDataDictKeyDataType必须要传");
                  PGSKServiceSupportedDataType type = [dict[PKSGServiceDataDictKeyDataType] unsignedIntegerValue];
-                 id data = [PGShareKitData() alloc] init];
+                 id data = [[PGShareKitData(type) alloc] init];
+                 [data setValuesForKeysWithDictionary:dict];
                  
                  id<PGSKService> service = [[PGShareKitService(serviceInfo) alloc] init];
+                 RACSignal* successSignal = [service rac_signalForSelector:@selector(service:didSuccess:) fromProtocol:@protocol(PGSKServiceDelegate)];
+                 RACSignal* failSignal = [service rac_signalForSelector:@selector(service:didFail:) fromProtocol:@protocol(PGSKServiceDelegate)];
+                 RACSignal* cancelSignal = [service rac_signalForSelector:@selector(serviceDidCancel:) fromProtocol:@protocol(PGSKServiceDelegate)];
+                 
                  [service performSelector:PGShareKitSelector(serviceInfo.supportedShareType)
                                withObject:data];
-//                 [qq rac_signalForSelector:<#(SEL)#> fromProtocol:<#(Protocol *)#>]
-//                 [qq shareText:text];
+                 
              }
          return nil;
     }];
