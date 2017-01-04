@@ -7,7 +7,9 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "PGSKServiceInfo.h"
 
-@interface PGSKServiceInfoPOD : NSObject
+
+@interface PGSKServiceInfoPOD : NSObject<PGSKServiceInfo>
 
 @end

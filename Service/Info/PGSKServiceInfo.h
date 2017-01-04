@@ -21,9 +21,16 @@
 @property(nonatomic, readonly, assign) PGSKServiceSupportedDataType supportedShareType;
 @end
 
-@interface PGSKServiceInfoPOD : NSObject<PGSKServiceInfo>
 
-@end
+
+
+typedef void(^PGSKConfigLoadServiceSuccess)(NSArray<id<PGSKServiceInfo>>*services);
+
+void PGSKConfigLoadServiceInfo(NSDictionary* param,PGSKConfigLoadServiceSuccess success, PGSKFailBlock fail);
+
+
+
+
 
 
 

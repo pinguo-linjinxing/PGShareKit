@@ -7,7 +7,8 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "PGSKTypes.h"
 
-@interface CopyWritingFormat : NSObject
+typedef void(^PGSKConfigLoadCopyWritingSuccess)(NSString* title, NSString* message);
 
-@end
+void PGSKConfigLoadCopyWritingInfo(NSDictionary* param,PGSKConfigLoadCopyWritingSuccess success, PGSKFailBlock fail);

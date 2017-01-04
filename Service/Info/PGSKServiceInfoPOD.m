@@ -8,6 +8,18 @@
 
 #import "PGSKServiceInfoPOD.h"
 
+
+@interface PGSKServiceInfoPOD()
+@property(nonatomic, strong) NSString* name;
+@property(nonatomic, strong) NSString* key;
+@property(nonatomic, strong) NSString* appKey;
+@property(nonatomic, strong) NSString* appSecret;
+@property(nonatomic, strong) NSURL* sloganUrl;
+@property(nonatomic, assign) PGSKServiceSupportedDataType supportedShareType;
+@end
+
+
 @implementation PGSKServiceInfoPOD
+
 
 @end

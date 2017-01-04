@@ -10,13 +10,13 @@
 
 @interface PGSKServiceSelectorController()
 @property(strong) NSArray<PGSKServiceInfo>* service;
-@property(strong) UIView<PGSKServiceSelector>* selectorView;
+@property(strong) id<PGSKServiceSelector> selectorView;
 @property(copy) PGSKSelectServiceBlock selectBlock;
 @property(copy) PGSKCanelBlock cancelBlock;
 @end
 
 @implementation PGSKServiceSelectorController
-+ (instancetype)serviceSelectorControllerWithselectorView:(UIView<PGSKServiceSelector>*) selectorView
++ (instancetype)serviceSelectorControllerWithselectorView:(id<PGSKServiceSelector>) selectorView
                                                   service:(NSArray<PGSKServiceInfo>*)service{
     PGSKServiceSelectorController* controller = [[self alloc] init];
     controller.selectorView = selectorView;
@@ -26,6 +26,8 @@
 }
 
 - (void)showWithSelectBlock:(PGSKSelectServiceBlock)select cancelBlock:(PGSKCanelBlock)cancel{
+    self.selectBlock = select;
+    self.cancelBlock = cancel;
     [self.selectorView show];
 }
 

@@ -8,6 +8,41 @@
 
 #import "PGSKServiceData.h"
 
-//@implementation PGSKServiceData
-//
-//@end
+@interface PGSKServiceDataImagePOD()
+@property(nonatomic) NSString* title;
+@property(nonatomic) NSString* message;
+@property(nonatomic) UIImage* image;
+@property(nonatomic) NSURL* url;
+@end
+
+@implementation PGSKServiceDataImagePOD
+
+@end
+
+
+@interface PGSKServiceDataVideo()
+@property(nonatomic) NSString* title;
+@property(nonatomic) NSString* message;
+@property(nonatomic) UIImage* thumbnail;
+@property(nonatomic) NSURL* thumbnailUrl;
+@property(nonatomic) NSURL* url;
+@end
+
+@implementation PGSKServiceDataVideo
+
+@end
+
+@interface PGSKServiceDataWebPage()
+@property(nonatomic) NSString* title;
+@property(nonatomic) NSString* message;
+@property(nonatomic) UIImage* thumbnail;
+@property(nonatomic) NSURL* thumbnailUrl;
+@property(nonatomic) NSURL* url;
+@end
+
+@implementation PGSKServiceDataWebPage
+
+@end
+
+
+

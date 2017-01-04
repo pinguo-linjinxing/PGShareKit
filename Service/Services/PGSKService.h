@@ -13,14 +13,13 @@
 @protocol PGSKServiceDelegate;
 
 
-@protocol PGSKService
+@protocol PGSKService<NSObject>
 @property(nonatomic, weak) id<PGSKServiceDelegate> delegate;
-@property(nonatomic, readonly) id<PGSKServiceInfo> info;
 @property(nonatomic, readonly) BOOL isInstalled;
 @property(nonatomic, readonly) BOOL isInitDone;
-- (void)shareText:(id<PGSKServiceDataText>)text;
+//- (void)shareText:(id<PGSKServiceDataText>)text;
 - (void)shareImage:(id<PGSKServiceDataImage>)image;
-- (void)shareMultiImages:(id<PGSKServiceDataMultiImages>)images;
+//- (void)shareMultiImages:(id<PGSKServiceDataMultiImages>)images;
 - (void)shareVideo:(id<PGSKServiceDataVideo>)video;
 - (void)shareWebPage:(id<PGSKServiceDataWebPage>)webpage;
 @end

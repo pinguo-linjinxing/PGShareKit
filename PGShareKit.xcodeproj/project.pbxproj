@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		36945B49923BCA97A9ED25D9 /* libPods-PGShareKit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = EF2D459DA6FBD06CFC093E05 /* libPods-PGShareKit.a */; };
 		682864061E153B1000D56F43 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 682864051E153B1000D56F43 /* main.m */; };
 		682864091E153B1000D56F43 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 682864081E153B1000D56F43 /* AppDelegate.m */; };
 		6828640C1E153B1000D56F43 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6828640B1E153B1000D56F43 /* ViewController.m */; };
@@ -16,14 +17,18 @@
 		6828641F1E153B1000D56F43 /* PGShareKitTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6828641E1E153B1000D56F43 /* PGShareKitTests.m */; };
 		6828642A1E153B1100D56F43 /* PGShareKitUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 682864291E153B1100D56F43 /* PGShareKitUITests.m */; };
 		682864391E15965C00D56F43 /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 682864381E15965C00D56F43 /* Social.framework */; };
-		682864401E1597DF00D56F43 /* PGSKConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = 6828643F1E1597DF00D56F43 /* PGSKConfig.m */; };
 		682864491E1599D800D56F43 /* PGSKServiceSelectorView.m in Sources */ = {isa = PBXBuildFile; fileRef = 682864481E1599D800D56F43 /* PGSKServiceSelectorView.m */; };
 		6828644C1E159BD500D56F43 /* PGSKServiceSelectorController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6828644B1E159BD500D56F43 /* PGSKServiceSelectorController.m */; };
-		6828645C1E15B27D00D56F43 /* PGSKServiceData.m in Sources */ = {isa = PBXBuildFile; fileRef = 682864581E15B27D00D56F43 /* PGSKServiceData.m */; };
-		6828645D1E15B27D00D56F43 /* PGSKService.m in Sources */ = {isa = PBXBuildFile; fileRef = 6828645A1E15B27D00D56F43 /* PGSKService.m */; };
 		682864611E15B39400D56F43 /* PGShareKitBLL.m in Sources */ = {isa = PBXBuildFile; fileRef = 682864601E15B39400D56F43 /* PGShareKitBLL.m */; };
-		682864651E15BBA300D56F43 /* CopyWritingFormat.m in Sources */ = {isa = PBXBuildFile; fileRef = 682864641E15BBA300D56F43 /* CopyWritingFormat.m */; };
-		68A09B1F1E164D7800521DA3 /* PGSKServiceQQ.m in Sources */ = {isa = PBXBuildFile; fileRef = 68A09B1E1E164D7800521DA3 /* PGSKServiceQQ.m */; };
+		68C4E8921E171FC700F3A144 /* PGShareKitDictionaryKey.m in Sources */ = {isa = PBXBuildFile; fileRef = 68C4E8911E171FC700F3A144 /* PGShareKitDictionaryKey.m */; };
+		68C4E8A01E1BCBE300F3A144 /* CopyWritingFormat.m in Sources */ = {isa = PBXBuildFile; fileRef = 68C4E89F1E1BCBE300F3A144 /* CopyWritingFormat.m */; };
+		68C4E8B51E1BCCBA00F3A144 /* PGSKServiceInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 68C4E8A81E1BCCBA00F3A144 /* PGSKServiceInfo.m */; };
+		68C4E8B61E1BCCBA00F3A144 /* PGSKServiceType.m in Sources */ = {isa = PBXBuildFile; fileRef = 68C4E8AA1E1BCCBA00F3A144 /* PGSKServiceType.m */; };
+		68C4E8B71E1BCCBA00F3A144 /* PGSKServiceData.m in Sources */ = {isa = PBXBuildFile; fileRef = 68C4E8AD1E1BCCBA00F3A144 /* PGSKServiceData.m */; };
+		68C4E8B81E1BCCBA00F3A144 /* PGSKService.m in Sources */ = {isa = PBXBuildFile; fileRef = 68C4E8B01E1BCCBA00F3A144 /* PGSKService.m */; };
+		68C4E8B91E1BCCBA00F3A144 /* PGSKServiceQQ.m in Sources */ = {isa = PBXBuildFile; fileRef = 68C4E8B21E1BCCBA00F3A144 /* PGSKServiceQQ.m */; };
+		68C4E8BA1E1BCCBA00F3A144 /* PGSKServiceWechat.m in Sources */ = {isa = PBXBuildFile; fileRef = 68C4E8B41E1BCCBA00F3A144 /* PGSKServiceWechat.m */; };
+		68FEFD681E1CC0F8004DDFB3 /* PGSKServiceInfoPOD.m in Sources */ = {isa = PBXBuildFile; fileRef = 68FEFD671E1CC0F8004DDFB3 /* PGSKServiceInfoPOD.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,25 +66,35 @@
 		682864291E153B1100D56F43 /* PGShareKitUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PGShareKitUITests.m; sourceTree = "<group>"; };
 		6828642B1E153B1100D56F43 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		682864381E15965C00D56F43 /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
-		6828643E1E1597DF00D56F43 /* PGSKConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PGSKConfig.h; sourceTree = "<group>"; };
-		6828643F1E1597DF00D56F43 /* PGSKConfig.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PGSKConfig.m; sourceTree = "<group>"; };
 		682864471E1599D800D56F43 /* PGSKServiceSelectorView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PGSKServiceSelectorView.h; sourceTree = "<group>"; };
 		682864481E1599D800D56F43 /* PGSKServiceSelectorView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PGSKServiceSelectorView.m; sourceTree = "<group>"; };
 		6828644A1E159BD500D56F43 /* PGSKServiceSelectorController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PGSKServiceSelectorController.h; sourceTree = "<group>"; };
 		6828644B1E159BD500D56F43 /* PGSKServiceSelectorController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PGSKServiceSelectorController.m; sourceTree = "<group>"; };
 		6828644D1E15A03400D56F43 /* PGSKServiceSelector.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PGSKServiceSelector.h; sourceTree = "<group>"; };
 		682864501E15A29500D56F43 /* PGSKTypes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PGSKTypes.h; sourceTree = "<group>"; };
-		682864571E15B27D00D56F43 /* PGSKServiceData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PGSKServiceData.h; sourceTree = "<group>"; };
-		682864581E15B27D00D56F43 /* PGSKServiceData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PGSKServiceData.m; sourceTree = "<group>"; };
-		682864591E15B27D00D56F43 /* PGSKService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PGSKService.h; sourceTree = "<group>"; };
-		6828645A1E15B27D00D56F43 /* PGSKService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PGSKService.m; sourceTree = "<group>"; };
-		6828645B1E15B27D00D56F43 /* PGSKServiceInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PGSKServiceInfo.h; sourceTree = "<group>"; };
 		6828645F1E15B39400D56F43 /* PGShareKitBLL.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PGShareKitBLL.h; sourceTree = "<group>"; };
 		682864601E15B39400D56F43 /* PGShareKitBLL.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PGShareKitBLL.m; sourceTree = "<group>"; };
-		682864631E15BBA300D56F43 /* CopyWritingFormat.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CopyWritingFormat.h; sourceTree = "<group>"; };
-		682864641E15BBA300D56F43 /* CopyWritingFormat.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CopyWritingFormat.m; sourceTree = "<group>"; };
-		68A09B1D1E164D7800521DA3 /* PGSKServiceQQ.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PGSKServiceQQ.h; sourceTree = "<group>"; };
-		68A09B1E1E164D7800521DA3 /* PGSKServiceQQ.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PGSKServiceQQ.m; sourceTree = "<group>"; };
+		68C4E8901E171FC700F3A144 /* PGShareKitDictionaryKey.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PGShareKitDictionaryKey.h; sourceTree = "<group>"; };
+		68C4E8911E171FC700F3A144 /* PGShareKitDictionaryKey.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PGShareKitDictionaryKey.m; sourceTree = "<group>"; };
+		68C4E89E1E1BCBE300F3A144 /* CopyWritingFormat.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CopyWritingFormat.h; sourceTree = "<group>"; };
+		68C4E89F1E1BCBE300F3A144 /* CopyWritingFormat.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CopyWritingFormat.m; sourceTree = "<group>"; };
+		68C4E8A71E1BCCBA00F3A144 /* PGSKServiceInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PGSKServiceInfo.h; sourceTree = "<group>"; };
+		68C4E8A81E1BCCBA00F3A144 /* PGSKServiceInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PGSKServiceInfo.m; sourceTree = "<group>"; };
+		68C4E8A91E1BCCBA00F3A144 /* PGSKServiceType.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PGSKServiceType.h; sourceTree = "<group>"; };
+		68C4E8AA1E1BCCBA00F3A144 /* PGSKServiceType.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PGSKServiceType.m; sourceTree = "<group>"; };
+		68C4E8AC1E1BCCBA00F3A144 /* PGSKServiceData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PGSKServiceData.h; sourceTree = "<group>"; };
+		68C4E8AD1E1BCCBA00F3A144 /* PGSKServiceData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PGSKServiceData.m; sourceTree = "<group>"; };
+		68C4E8AF1E1BCCBA00F3A144 /* PGSKService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PGSKService.h; sourceTree = "<group>"; };
+		68C4E8B01E1BCCBA00F3A144 /* PGSKService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PGSKService.m; sourceTree = "<group>"; };
+		68C4E8B11E1BCCBA00F3A144 /* PGSKServiceQQ.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PGSKServiceQQ.h; sourceTree = "<group>"; };
+		68C4E8B21E1BCCBA00F3A144 /* PGSKServiceQQ.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PGSKServiceQQ.m; sourceTree = "<group>"; };
+		68C4E8B31E1BCCBA00F3A144 /* PGSKServiceWechat.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PGSKServiceWechat.h; sourceTree = "<group>"; };
+		68C4E8B41E1BCCBA00F3A144 /* PGSKServiceWechat.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PGSKServiceWechat.m; sourceTree = "<group>"; };
+		68FEFD661E1CC0F8004DDFB3 /* PGSKServiceInfoPOD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PGSKServiceInfoPOD.h; sourceTree = "<group>"; };
+		68FEFD671E1CC0F8004DDFB3 /* PGSKServiceInfoPOD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PGSKServiceInfoPOD.m; sourceTree = "<group>"; };
+		BC50A3D8DCEAFBAC871F6F97 /* Pods-PGShareKit.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PGShareKit.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PGShareKit/Pods-PGShareKit.debug.xcconfig"; sourceTree = "<group>"; };
+		C5DFEA447AC37F308D461086 /* Pods-PGShareKit.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PGShareKit.release.xcconfig"; path = "Pods/Target Support Files/Pods-PGShareKit/Pods-PGShareKit.release.xcconfig"; sourceTree = "<group>"; };
+		EF2D459DA6FBD06CFC093E05 /* libPods-PGShareKit.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-PGShareKit.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,6 +103,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				682864391E15965C00D56F43 /* Social.framework in Frameworks */,
+				36945B49923BCA97A9ED25D9 /* libPods-PGShareKit.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -108,19 +124,29 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4CAD12EC4DB2DD7933C15D42 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				BC50A3D8DCEAFBAC871F6F97 /* Pods-PGShareKit.debug.xcconfig */,
+				C5DFEA447AC37F308D461086 /* Pods-PGShareKit.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		682863F81E153B1000D56F43 = {
 			isa = PBXGroup;
 			children = (
 				6828644E1E15A0CE00D56F43 /* Foundation */,
 				6828645E1E15B37900D56F43 /* BLL */,
-				682864551E15B27D00D56F43 /* Service */,
-				6828643A1E1597AA00D56F43 /* Cfg */,
+				68C4E8A51E1BCCBA00F3A144 /* Service */,
+				68C4E89D1E1BCBE300F3A144 /* CopyWriting */,
 				6828643D1E1597AA00D56F43 /* ServiceSelector */,
 				682864031E153B1000D56F43 /* PGShareKit */,
 				6828641D1E153B1000D56F43 /* PGShareKitTests */,
 				682864281E153B1100D56F43 /* PGShareKitUITests */,
 				682864021E153B1000D56F43 /* Products */,
 				682864371E15965C00D56F43 /* Frameworks */,
+				4CAD12EC4DB2DD7933C15D42 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -180,17 +206,9 @@
 			isa = PBXGroup;
 			children = (
 				682864381E15965C00D56F43 /* Social.framework */,
+				EF2D459DA6FBD06CFC093E05 /* libPods-PGShareKit.a */,
 			);
 			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		6828643A1E1597AA00D56F43 /* Cfg */ = {
-			isa = PBXGroup;
-			children = (
-				6828643E1E1597DF00D56F43 /* PGSKConfig.h */,
-				6828643F1E1597DF00D56F43 /* PGSKConfig.m */,
-			);
-			path = Cfg;
 			sourceTree = "<group>";
 		};
 		6828643D1E1597AA00D56F43 /* ServiceSelector */ = {
@@ -209,31 +227,10 @@
 			isa = PBXGroup;
 			children = (
 				682864501E15A29500D56F43 /* PGSKTypes.h */,
+				68C4E8901E171FC700F3A144 /* PGShareKitDictionaryKey.h */,
+				68C4E8911E171FC700F3A144 /* PGShareKitDictionaryKey.m */,
 			);
 			path = Foundation;
-			sourceTree = "<group>";
-		};
-		682864551E15B27D00D56F43 /* Service */ = {
-			isa = PBXGroup;
-			children = (
-				682864561E15B27D00D56F43 /* Data */,
-				682864621E15BB6400D56F43 /* CopyWriting */,
-				682864591E15B27D00D56F43 /* PGSKService.h */,
-				6828645A1E15B27D00D56F43 /* PGSKService.m */,
-				6828645B1E15B27D00D56F43 /* PGSKServiceInfo.h */,
-				68A09B1D1E164D7800521DA3 /* PGSKServiceQQ.h */,
-				68A09B1E1E164D7800521DA3 /* PGSKServiceQQ.m */,
-			);
-			path = Service;
-			sourceTree = "<group>";
-		};
-		682864561E15B27D00D56F43 /* Data */ = {
-			isa = PBXGroup;
-			children = (
-				682864571E15B27D00D56F43 /* PGSKServiceData.h */,
-				682864581E15B27D00D56F43 /* PGSKServiceData.m */,
-			);
-			path = Data;
 			sourceTree = "<group>";
 		};
 		6828645E1E15B37900D56F43 /* BLL */ = {
@@ -245,13 +242,58 @@
 			path = BLL;
 			sourceTree = "<group>";
 		};
-		682864621E15BB6400D56F43 /* CopyWriting */ = {
+		68C4E89D1E1BCBE300F3A144 /* CopyWriting */ = {
 			isa = PBXGroup;
 			children = (
-				682864631E15BBA300D56F43 /* CopyWritingFormat.h */,
-				682864641E15BBA300D56F43 /* CopyWritingFormat.m */,
+				68C4E89E1E1BCBE300F3A144 /* CopyWritingFormat.h */,
+				68C4E89F1E1BCBE300F3A144 /* CopyWritingFormat.m */,
 			);
 			path = CopyWriting;
+			sourceTree = "<group>";
+		};
+		68C4E8A51E1BCCBA00F3A144 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				68C4E8A61E1BCCBA00F3A144 /* Info */,
+				68C4E8AB1E1BCCBA00F3A144 /* PlainOldData */,
+				68C4E8AE1E1BCCBA00F3A144 /* Services */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		68C4E8A61E1BCCBA00F3A144 /* Info */ = {
+			isa = PBXGroup;
+			children = (
+				68C4E8A71E1BCCBA00F3A144 /* PGSKServiceInfo.h */,
+				68C4E8A81E1BCCBA00F3A144 /* PGSKServiceInfo.m */,
+				68C4E8A91E1BCCBA00F3A144 /* PGSKServiceType.h */,
+				68C4E8AA1E1BCCBA00F3A144 /* PGSKServiceType.m */,
+				68FEFD661E1CC0F8004DDFB3 /* PGSKServiceInfoPOD.h */,
+				68FEFD671E1CC0F8004DDFB3 /* PGSKServiceInfoPOD.m */,
+			);
+			path = Info;
+			sourceTree = "<group>";
+		};
+		68C4E8AB1E1BCCBA00F3A144 /* PlainOldData */ = {
+			isa = PBXGroup;
+			children = (
+				68C4E8AC1E1BCCBA00F3A144 /* PGSKServiceData.h */,
+				68C4E8AD1E1BCCBA00F3A144 /* PGSKServiceData.m */,
+			);
+			path = PlainOldData;
+			sourceTree = "<group>";
+		};
+		68C4E8AE1E1BCCBA00F3A144 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				68C4E8AF1E1BCCBA00F3A144 /* PGSKService.h */,
+				68C4E8B01E1BCCBA00F3A144 /* PGSKService.m */,
+				68C4E8B11E1BCCBA00F3A144 /* PGSKServiceQQ.h */,
+				68C4E8B21E1BCCBA00F3A144 /* PGSKServiceQQ.m */,
+				68C4E8B31E1BCCBA00F3A144 /* PGSKServiceWechat.h */,
+				68C4E8B41E1BCCBA00F3A144 /* PGSKServiceWechat.m */,
+			);
+			path = Services;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -261,9 +303,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 6828642E1E153B1100D56F43 /* Build configuration list for PBXNativeTarget "PGShareKit" */;
 			buildPhases = (
+				BA1D8C8B6C535D31076BDEB4 /* [CP] Check Pods Manifest.lock */,
 				682863FD1E153B1000D56F43 /* Sources */,
 				682863FE1E153B1000D56F43 /* Frameworks */,
 				682863FF1E153B1000D56F43 /* Resources */,
+				B929D23591EB2CD707D09961 /* [CP] Embed Pods Frameworks */,
+				4AA8F769D61A3BF892001F56 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -382,21 +427,73 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		4AA8F769D61A3BF892001F56 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-PGShareKit/Pods-PGShareKit-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B929D23591EB2CD707D09961 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-PGShareKit/Pods-PGShareKit-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		BA1D8C8B6C535D31076BDEB4 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		682863FD1E153B1000D56F43 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				68C4E8B51E1BCCBA00F3A144 /* PGSKServiceInfo.m in Sources */,
+				68C4E8BA1E1BCCBA00F3A144 /* PGSKServiceWechat.m in Sources */,
 				682864611E15B39400D56F43 /* PGShareKitBLL.m in Sources */,
 				682864491E1599D800D56F43 /* PGSKServiceSelectorView.m in Sources */,
+				68FEFD681E1CC0F8004DDFB3 /* PGSKServiceInfoPOD.m in Sources */,
 				6828640C1E153B1000D56F43 /* ViewController.m in Sources */,
+				68C4E8B91E1BCCBA00F3A144 /* PGSKServiceQQ.m in Sources */,
+				68C4E8B61E1BCCBA00F3A144 /* PGSKServiceType.m in Sources */,
 				682864091E153B1000D56F43 /* AppDelegate.m in Sources */,
-				6828645C1E15B27D00D56F43 /* PGSKServiceData.m in Sources */,
-				6828645D1E15B27D00D56F43 /* PGSKService.m in Sources */,
-				682864651E15BBA300D56F43 /* CopyWritingFormat.m in Sources */,
+				68C4E8B81E1BCCBA00F3A144 /* PGSKService.m in Sources */,
+				68C4E8921E171FC700F3A144 /* PGShareKitDictionaryKey.m in Sources */,
 				6828644C1E159BD500D56F43 /* PGSKServiceSelectorController.m in Sources */,
-				68A09B1F1E164D7800521DA3 /* PGSKServiceQQ.m in Sources */,
-				682864401E1597DF00D56F43 /* PGSKConfig.m in Sources */,
+				68C4E8B71E1BCCBA00F3A144 /* PGSKServiceData.m in Sources */,
+				68C4E8A01E1BCBE300F3A144 /* CopyWritingFormat.m in Sources */,
 				682864061E153B1000D56F43 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -544,9 +641,11 @@
 		};
 		6828642F1E153B1100D56F43 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = BC50A3D8DCEAFBAC871F6F97 /* Pods-PGShareKit.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = PGShareKit/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.camera360.PGShareKit;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -555,9 +654,11 @@
 		};
 		682864301E153B1100D56F43 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C5DFEA447AC37F308D461086 /* Pods-PGShareKit.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = PGShareKit/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.camera360.PGShareKit;
 				PRODUCT_NAME = "$(TARGET_NAME)";

@@ -8,6 +8,10 @@
 
 #import "PGShareKitDictionaryKey.h"
 
-@implementation PGShareKitDictionaryKey
 
-@end
+NSString* const PGShareKitDictionaryKeyAuthor      = @"Author";
+NSString* const PGShareKitDictionaryKeyLanguage    = @"zh";
+NSString* const PGShareKitDictionaryKeyDescription = @"Description";
+
+
+

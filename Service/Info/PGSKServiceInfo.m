@@ -8,15 +8,14 @@
 
 #import "PGSKServiceInfo.h"
 
-@interface PGSKServiceInfoPOD()
-@property(nonatomic, strong) NSString* name;
-@property(nonatomic, strong) NSURL* sloganUrl;
-@property(nonatomic, assign) PGSKServiceSupportedDataType supportedDataType;
-@end
-
-@implementation PGSKServiceInfoPOD
-
-@end
 
 
+void PGSKConfigLoadServiceInfo(NSDictionary* param,
+                               PGSKConfigLoadServiceSuccess success,
+                               PGSKFailBlock fail){
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+        NSDictionary* dict = [NSDictionary dictionaryWithContentsOfFile:@""];
+        
+    });
+}
 

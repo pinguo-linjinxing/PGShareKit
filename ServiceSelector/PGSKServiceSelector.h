@@ -17,6 +17,7 @@
 @property(weak) id<PGSKServiceSelectorDataSource> dataSource;
 @property(weak) id<PGSKServiceSelectorDelegate> delegate;
 - (void)show;
+- (void)dismiss;
 @end
 
 @protocol PGSKServiceSelectorDataSource <NSObject>

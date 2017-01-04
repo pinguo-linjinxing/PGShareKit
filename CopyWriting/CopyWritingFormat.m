@@ -8,6 +8,10 @@
 
 #import "CopyWritingFormat.h"
 
-@implementation CopyWritingFormat
 
-@end
+
+void PGSKConfigLoadCopyWritingInfo(NSDictionary* param,
+                                   PGSKConfigLoadCopyWritingSuccess success,
+                                   PGSKFailBlock fail){
+    
+}

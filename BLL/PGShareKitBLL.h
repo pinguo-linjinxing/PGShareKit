@@ -9,6 +9,13 @@
 #import <Foundation/Foundation.h>
 #import "PGSKTypes.h"
 
+FOUNDATION_EXPORT NSString *const PKSGServiceDataDictKeyAuthor ;
+FOUNDATION_EXPORT NSString *const PKSGServiceDataDictKeyDescription ;
+FOUNDATION_EXPORT NSString *const PKSGServiceDataDictKeyThumbnail ;
+FOUNDATION_EXPORT NSString *const PKSGServiceDataDictKeyThumbnailURL;
+FOUNDATION_EXPORT NSString *const PKSGServiceDataDictKeyURL;
+FOUNDATION_EXPORT NSString *const PKSGServiceDataDictKeyDataType;
+
 typedef NSDictionary* (^PGShareKitBLLGetSharInfo)(PGSKServiceSupportedDataType type);
 
 /**
