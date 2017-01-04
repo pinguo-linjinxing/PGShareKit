@@ -15,6 +15,7 @@ typedef void(^PGSKSelectBlock)(id sender, NSIndexPath* indexPath);
 typedef void(^PGSKSenderBlock)(id sender);
 typedef PGSKSenderBlock PGSKCanelBlock;
 
+FOUNDATION_EXPORT NSString *const  PGShareKitErrorDomain;
 /**
  支持的数据类型定义
  */

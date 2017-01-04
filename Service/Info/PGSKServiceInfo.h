@@ -26,7 +26,7 @@
 
 typedef void(^PGSKConfigLoadServiceSuccess)(NSArray<id<PGSKServiceInfo>>*services);
 
-void PGSKConfigLoadServiceInfo(NSDictionary* param,PGSKConfigLoadServiceSuccess success, PGSKFailBlock fail);
+void PGSKServiceInfoLoadConfig(NSDictionary* param,PGSKConfigLoadServiceSuccess success, PGSKFailBlock fail);
 
 
 

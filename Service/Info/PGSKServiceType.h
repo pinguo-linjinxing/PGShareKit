@@ -8,8 +8,8 @@
 
 #import <Foundation/Foundation.h>
 
-FOUNDATION_EXPORT NSString *const PKSGServiceTypeWechat ;
-FOUNDATION_EXPORT NSString *const PKSGServiceTypeQQ ;
-FOUNDATION_EXPORT NSString *const PKSGServiceTypeWeiBo ;
-FOUNDATION_EXPORT NSString *const PKSGServiceTypeQQZone;
-FOUNDATION_EXPORT NSString *const PKSGServiceTypeInstagram ;
+FOUNDATION_EXPORT NSString *const PKSGServiceWechat ;
+FOUNDATION_EXPORT NSString *const PKSGServiceQQ ;
+FOUNDATION_EXPORT NSString *const PKSGServiceWeiBo ;
+FOUNDATION_EXPORT NSString *const PKSGServiceQQZone;
+FOUNDATION_EXPORT NSString *const PKSGServiceInstagram ;

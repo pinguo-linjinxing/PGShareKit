@@ -21,7 +21,7 @@
 @end
 
 
-@interface PGSKServiceDataVideo()
+@interface PGSKServiceDataVideoPOD()
 @property(nonatomic) NSString* title;
 @property(nonatomic) NSString* message;
 @property(nonatomic) UIImage* thumbnail;
@@ -29,11 +29,11 @@
 @property(nonatomic) NSURL* url;
 @end
 
-@implementation PGSKServiceDataVideo
+@implementation PGSKServiceDataVideoPOD
 
 @end
 
-@interface PGSKServiceDataWebPage()
+@interface PGSKServiceDataWebPagePOD()
 @property(nonatomic) NSString* title;
 @property(nonatomic) NSString* message;
 @property(nonatomic) UIImage* thumbnail;
@@ -41,17 +41,17 @@
 @property(nonatomic) NSURL* url;
 @end
 
-@implementation PGSKServiceDataWebPage
+@implementation PGSKServiceDataWebPagePOD
 
 @end
 
 
 
 
-Class PGShareKitData(PGSKServiceSupportedDataType type){
+id PGShareKitCreateData(PGSKServiceSupportedDataType type, NSDictionary* initDict){
     return [@{@(PGSKServiceSupportedDataTypeImage):[PGSKServiceDataImagePOD class],
-              @(PGSKServiceSupportedDataTypeVideo):[PGSKServiceDataVideo class],
-              @(PGSKServiceSupportedDataTypeWebPage):[PGSKServiceDataWebPage class]
+              @(PGSKServiceSupportedDataTypeVideo):[PGSKServiceDataVideoPOD class],
+              @(PGSKServiceSupportedDataTypeWebPage):[PGSKServiceDataWebPagePOD class]
               }
             objectForKey:@(type)];
 }

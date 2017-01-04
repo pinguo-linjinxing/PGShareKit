@@ -36,8 +36,8 @@
 @end
 
 
-Class PGShareKitService(id<PGSKServiceInfo> serviceInfo);
-SEL PGShareKitSelector(PGSKServiceSupportedDataType type);
+NSObject<PGSKService>* PGShareKitCreateService(id<PGSKServiceInfo> serviceInfo);
+SEL PGShareKitGetServiceSelector(PGSKServiceSupportedDataType type);
 
 
 

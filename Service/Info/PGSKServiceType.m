@@ -8,10 +8,10 @@
 
 #import "PGSKServiceType.h"
 
-NSString *const PKSGServiceTypeWechat = @"wechat";
-NSString *const PKSGServiceTypeQQ = @"wechatMoments";
-NSString *const PKSGServiceTypeWeiBo = @"sina";
-NSString *const PKSGServiceTypeQQZone = @"qqzone";
-NSString *const PKSGServiceTypeInstagram = @"instagram";
+NSString *const PKSGServiceWechat = @"wechat";
+NSString *const PKSGServiceQQ = @"wechatMoments";
+NSString *const PKSGServiceWeiBo = @"sina";
+NSString *const PKSGServiceQQZone = @"qqzone";
+NSString *const PKSGServiceInstagram = @"instagram";
 
 

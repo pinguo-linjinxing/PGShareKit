@@ -11,9 +11,9 @@
 #import "PGSKServiceWechat.h"
 #import "PGSKServiceType.h"
 
-Class PGShareKitService(id<PGSKServiceInfo> serviceInfo){
-    return [@{PKSGServiceTypeWechat:[PGSKServiceWechat class],
-              PKSGServiceTypeQQ:[PGSKServiceQQ class]
+NSObject<PGSKService>* PGShareKitCreateService(id<PGSKServiceInfo> serviceInfo){
+    return [@{PKSGServiceWechat:[PGSKServiceWechat class],
+              PKSGServiceQQ:[PGSKServiceQQ class]
               }
             valueForKey:serviceInfo.name];
 }
@@ -21,10 +21,10 @@ Class PGShareKitService(id<PGSKServiceInfo> serviceInfo){
 
 
 
-SEL PGShareKitSelector(PGSKServiceSupportedDataType type){
+SEL PGShareKitGetServiceSelector(PGSKServiceSupportedDataType type){
     NSString* selector = [@{@(PGSKServiceSupportedDataTypeVideo):NSStringFromSelector(@selector(shareVideo:)),
                             @(PGSKServiceSupportedDataTypeImage):NSStringFromSelector(@selector(shareImage:)),
-                            @(PGSKServiceSupportedDataTypeVideo):NSStringFromSelector(@selector(shareWebPage:))
+                            @(PGSKServiceSupportedDataTypeWebPage):NSStringFromSelector(@selector(shareWebPage:))
                             }
                           objectForKey:@(type)];
     return NSSelectorFromString(selector);

@@ -48,17 +48,17 @@
 
 @end
 
-@interface PGSKServiceDataVideo : NSObject<PGSKServiceDataVideo>
+@interface PGSKServiceDataVideoPOD : NSObject<PGSKServiceDataVideo>
 
 @end
 
-@interface PGSKServiceDataWebPage : NSObject<PGSKServiceDataWebPage>
+@interface PGSKServiceDataWebPagePOD : NSObject<PGSKServiceDataWebPage>
 
 @end
 
 
 
-Class PGShareKitData(PGSKServiceSupportedDataType type);
+id PGShareKitCreateData(PGSKServiceSupportedDataType type, NSDictionary* initDict);
 
 
 

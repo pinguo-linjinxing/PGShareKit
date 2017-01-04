@@ -16,7 +16,15 @@ FOUNDATION_EXPORT NSString *const PKSGServiceDataDictKeyThumbnailURL;
 FOUNDATION_EXPORT NSString *const PKSGServiceDataDictKeyURL;
 FOUNDATION_EXPORT NSString *const PKSGServiceDataDictKeyDataType;
 
-typedef NSDictionary* (^PGShareKitBLLGetSharInfo)(PGSKServiceSupportedDataType type);
+
+/**
+ 调用者需要实现的block
+
+ @param type 社交平台能支持的数据类型
+ @param success 调用者成功获取到了数据，（有些需要上传视频到服务器，因此这里使用block，可以实现异步）
+ @param fail 调用者获取数据失败了。
+ */
+typedef void (^PGShareKitBLLGetSharInfo)(PGSKServiceSupportedDataType type, PGSKDataBlock success, PGSKFailBlock fail);
 
 /**
  加载配置->显示选择器->获取分享数据类型->分享数据
@@ -26,3 +34,9 @@ typedef NSDictionary* (^PGShareKitBLLGetSharInfo)(PGSKServiceSupportedDataType t
  @param fail 失败回调
  */
 void PGShareKitBLLShare(PGShareKitBLLGetSharInfo getParamBlock, PGSKSuccessBlock success, PGSKFailBlock fail);
+
+
+
+
+
+

@@ -25,14 +25,19 @@ NSString *const PKSGServiceDataDictKeyURL          = @"URL";
 NSString *const PKSGServiceDataDictKeyDataType     = @"supportedShareType";
 
 
+NSString *const  PGShareKitErrorDomain = @"PGShareKitErrorDomain";
 
+static inline NSError* PGShareKitReturnError(){
+    return [NSError errorWithDomain:PGShareKitErrorDomain code:-1 userInfo:@{NSLocalizedDescriptionKey:@"用户取消分享"}];
+}
+static RACSignal* PGShareKitCreateShareSignal(NSDictionary* dict, id<PGSKServiceInfo> serviceInfo);
 
 
 void PGShareKitBLLShare(PGShareKitBLLGetSharInfo getParamBlock,
                         PGSKSuccessBlock success,
                         PGSKFailBlock fail){
     [[[RACSignal createSignal:^RACDisposable *(id<RACSubscriber> subscriber) {
-        PGSKConfigLoadServiceInfo(nil, ^(NSArray<id<PGSKServiceInfo>> *services) {
+        PGSKServiceInfoLoadConfig(nil, ^(NSArray<id<PGSKServiceInfo>> *services) {
             [subscriber sendNext:services];
             [subscriber sendCompleted];
         }, ^(NSError *error) {
@@ -47,31 +52,66 @@ void PGShareKitBLLShare(PGShareKitBLLGetSharInfo getParamBlock,
                 [subscriber sendNext:service];
                 [subscriber sendCompleted];
             } cancelBlock:^(id sender) {
-//                [subscriber sendError:error];
+                [subscriber sendError:PGShareKitReturnError()];
             }];
             return nil;
         }];
     }]
      flattenMap:^RACStream *(id<PGSKServiceInfo> serviceInfo) {
-             if (getParamBlock) {
-                 NSDictionary* dict = getParamBlock(PGSKServiceSupportedDataTypeVideo);
-                 assert(nil != dict[PKSGServiceDataDictKeyDataType]);
-//                 NSAssert(nil != dict[PKSGServiceDataDictKeyDataType], @"PKSGServiceDataDictKeyDataType必须要传");
-                 PGSKServiceSupportedDataType type = [dict[PKSGServiceDataDictKeyDataType] unsignedIntegerValue];
-                 id data = [[PGShareKitData(type) alloc] init];
-                 [data setValuesForKeysWithDictionary:dict];
-                 
-                 id<PGSKService> service = [[PGShareKitService(serviceInfo) alloc] init];
-                 RACSignal* successSignal = [service rac_signalForSelector:@selector(service:didSuccess:) fromProtocol:@protocol(PGSKServiceDelegate)];
-                 RACSignal* failSignal = [service rac_signalForSelector:@selector(service:didFail:) fromProtocol:@protocol(PGSKServiceDelegate)];
-                 RACSignal* cancelSignal = [service rac_signalForSelector:@selector(serviceDidCancel:) fromProtocol:@protocol(PGSKServiceDelegate)];
-                 
-                 [service performSelector:PGShareKitSelector(serviceInfo.supportedShareType)
-                               withObject:data];
-                 
-             }
-         return nil;
+         assert(nil != getParamBlock);
+         return [[RACSignal createSignal:^RACDisposable *(id<RACSubscriber> subscriber) {
+             getParamBlock(PGSKServiceSupportedDataTypeVideo,
+                           ^(NSDictionary* dict){
+                               [subscriber sendNext:PGShareKitCreateShareSignal(dict, serviceInfo)];
+                           },
+                           ^(NSError* error){
+                               [subscriber sendError:error];
+                           }
+                           );
+             return nil;
+         }] flatten];
+
     }];
+}
+
+static RACSignal* PGShareKitCreateShareSignal(NSDictionary* dict, id<PGSKServiceInfo> serviceInfo){
+    assert(nil != dict[PKSGServiceDataDictKeyDataType]);
+    //                 NSAssert(nil != dict[PKSGServiceDataDictKeyDataType], @"PKSGServiceDataDictKeyDataType必须要传");
+    PGSKServiceSupportedDataType type = [dict[PKSGServiceDataDictKeyDataType] unsignedIntegerValue];
+    
+    id data = PGShareKitCreateData(type, dict);
+    [data setValuesForKeysWithDictionary:dict];
+    if (PGSKServiceSupportedDataTypeImage == type){
+        assert([data conformsToProtocol:@protocol(PGSKServiceDataImage)]);
+    }
+    if (PGSKServiceSupportedDataTypeVideo == type){
+        assert([data conformsToProtocol:@protocol(PGSKServiceDataVideo)]);
+    }
+    if (PGSKServiceSupportedDataTypeWebPage == type){
+        assert([data conformsToProtocol:@protocol(PGSKServiceDataWebPage)]);
+    }
+    
+    NSObject<PGSKService>* service = PGShareKitCreateService(serviceInfo);
+    assert([service conformsToProtocol:@protocol(PGSKService)]);
+    RACSignal* successSignal = [[service rac_signalForSelector:@selector(service:didSuccess:)
+                                                  fromProtocol:@protocol(PGSKServiceDelegate)]
+                                map:^id(RACTuple* value) {
+                                    return value.second;
+                                }];
+    RACSignal* failSignal = [[service rac_signalForSelector:@selector(service:didFail:)
+                                               fromProtocol:@protocol(PGSKServiceDelegate)]
+                             map:^id(RACTuple* value) {
+                                 return value.second;
+                             }];
+    RACSignal* cancelSignal = [[service rac_signalForSelector:@selector(serviceDidCancel:)
+                                                 fromProtocol:@protocol(PGSKServiceDelegate)]
+                               map:^id(id value) {
+                                   return PGShareKitReturnError();
+                               }];
+    
+    [service performSelector:PGShareKitGetServiceSelector(type)
+                  withObject:data];
+    return [RACSignal merge:@[successSignal, failSignal, cancelSignal]];
 }
 
 
