@@ -8,6 +8,14 @@
 
 #import "PGSKServiceInfo.h"
 
+NSString *const PKSGServiceWechat = @"wechat";
+NSString *const PKSGServiceQQ = @"wechatMoments";
+NSString *const PKSGServiceWeiBo = @"sina";
+NSString *const PKSGServiceQQZone = @"qqzone";
+NSString *const PKSGServiceInstagram = @"instagram";
+
+
+
 
 
 void PGSKServiceInfoLoadConfig(NSDictionary* param,

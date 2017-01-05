@@ -7,7 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "PGSKServiceData.h"
+#import "PGSKShareData.h"
 #import "PGSKServiceInfo.h"
 
 @protocol PGSKServiceDelegate;
@@ -15,20 +15,22 @@
 
 @protocol PGSKService<NSObject>
 @property(nonatomic, weak) id<PGSKServiceDelegate> delegate;
-@property(nonatomic, readonly) BOOL isInstalled;
-@property(nonatomic, readonly) BOOL isInitDone;
-//- (void)shareText:(id<PGSKServiceDataText>)text;
-- (void)shareImage:(id<PGSKServiceDataImage>)image;
-//- (void)shareMultiImages:(id<PGSKServiceDataMultiImages>)images;
-- (void)shareVideo:(id<PGSKServiceDataVideo>)video;
-- (void)shareWebPage:(id<PGSKServiceDataWebPage>)webpage;
+//@property(nonatomic, readonly) BOOL isInstalled;
+//@property(nonatomic, readonly) BOOL isInitDone;
+//- (void)shareText:(id<PGSKShareDataText>)text;
++ (BOOL)isInstalled;
+- (void)shareImage:(id<PGSKShareDataImage>)image;
+//- (void)shareMultiImages:(id<PGSKShareDataMultiImages>)images;
+- (void)shareWebPage:(id<PGSKShareDataWebPage>)webpage;
+
+@optional
+- (void)shareVideo:(id<PGSKShareDataVideo>)video;
 @end
 
 @protocol PGSKServiceDelegate <NSObject>
 @optional
-- (void)service:(id<PGSKService>)service didSuccess:(id)param;
-- (void)service:(id<PGSKService>)service didFail:(NSError *)error;
-- (void)serviceDidCancel:(id<PGSKService>)service;
+- (void)service:(id<PGSKService>)service didCompleteWithResults:(NSDictionary *)results;
+- (void)service:(id<PGSKService>)service didFailWithError:(NSError *)error;
 //- (void)service:(id<PGSKService>)service didReceiveRequest:(id)param;
 //- (void)serviceDidLogined:(id<PGSKService>)service;
 //- (void)serviceWillShare:(id<PGSKService>)service;

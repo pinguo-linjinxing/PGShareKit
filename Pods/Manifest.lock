@@ -1,4 +1,9 @@
 PODS:
+  - BoltsFramework (1.8.4.7)
+  - MiniFBCore (4.16.0.32)
+  - MiniFBLogin (4.16.0.11)
+  - MiniFBShare (4.16.0.5)
+  - QQSDK (3.1.0.8)
   - ReactiveCocoa (2.5):
     - ReactiveCocoa/UI (= 2.5)
   - ReactiveCocoa/Core (2.5):
@@ -6,13 +11,29 @@ PODS:
   - ReactiveCocoa/no-arc (2.5)
   - ReactiveCocoa/UI (2.5):
     - ReactiveCocoa/Core
+  - WeiboSDK (3.1.1.2)
+  - WeixinSDK (1.7.5)
 
 DEPENDENCIES:
+  - BoltsFramework (= 1.8.4.7)
+  - MiniFBCore (= 4.16.0.32)
+  - MiniFBLogin (= 4.16.0.11)
+  - MiniFBShare (= 4.16.0.5)
+  - QQSDK (= 3.1.0.8)
   - ReactiveCocoa (= 2.5)
+  - WeiboSDK (= 3.1.1.2)
+  - WeixinSDK (= 1.7.5)
 
 SPEC CHECKSUMS:
+  BoltsFramework: e645901dc0aac211c595e079a78bb4a3f7f6bc0f
+  MiniFBCore: 7af69b2c4d87ba86702e461a318e777a06650b68
+  MiniFBLogin: e2670f6d49efb9559bea1ae5ebdd99bd37e60347
+  MiniFBShare: 8d277125c86de39426cbb87189800e0ccc828848
+  QQSDK: 74544d3bd3476d711a9ec1451cdeb3e072a7f4b7
   ReactiveCocoa: e2db045570aa97c695e7aa97c2bcab222ae51f4a
+  WeiboSDK: 632c122812e6ede0232be3402246bb5ff9207630
+  WeixinSDK: c3f52b4a365f96a142809b33d7f1f0280c73d9ec
 
-PODFILE CHECKSUM: c8016657787897fc57f12e7f6c93bfbbebf7c32a
+PODFILE CHECKSUM: 188081fbe5d47f824f98d3002dcbac03688ddbe3
 
 COCOAPODS: 1.1.1

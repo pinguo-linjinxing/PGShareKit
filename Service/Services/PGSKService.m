@@ -9,7 +9,7 @@
 #import "PGSKService.h"
 #import "PGSKServiceQQ.h"
 #import "PGSKServiceWechat.h"
-#import "PGSKServiceType.h"
+
 
 NSObject<PGSKService>* PGShareKitCreateService(id<PGSKServiceInfo> serviceInfo){
     return [@{PKSGServiceWechat:[PGSKServiceWechat class],

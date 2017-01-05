@@ -7,8 +7,15 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "PGSKServiceData.h"
+#import "PGSKShareData.h"
 #import "PGSKTypes.h"
+
+FOUNDATION_EXPORT NSString *const PKSGServiceWechat ;
+FOUNDATION_EXPORT NSString *const PKSGServiceQQ ;
+FOUNDATION_EXPORT NSString *const PKSGServiceWeiBo ;
+FOUNDATION_EXPORT NSString *const PKSGServiceQQZone;
+FOUNDATION_EXPORT NSString *const PKSGServiceInstagram ;
+
 /**
  各社交平台属性定义
  */

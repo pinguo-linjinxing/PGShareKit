@@ -8,10 +8,9 @@
 
 #import "PGShareKitBLL.h"
 #import "PGSKTypes.h"
-#import "PGSKServiceType.h"
 #import "PGSKService.h"
 #import "PGSKServiceSelectorController.h"
-#import "PGSKServiceData.h"
+#import "PGSKShareData.h"
 
 #import <ReactiveCocoa/ReactiveCocoa.h>
 
@@ -69,7 +68,8 @@ void PGShareKitBLLShare(PGShareKitBLLGetSharInfo getParamBlock,
                            }
                            );
              return nil;
-         }] flatten];
+         }]
+                 flatten];
 
     }];
 }
@@ -82,13 +82,13 @@ static RACSignal* PGShareKitCreateShareSignal(NSDictionary* dict, id<PGSKService
     id data = PGShareKitCreateData(type, dict);
     [data setValuesForKeysWithDictionary:dict];
     if (PGSKServiceSupportedDataTypeImage == type){
-        assert([data conformsToProtocol:@protocol(PGSKServiceDataImage)]);
+        assert([data conformsToProtocol:@protocol(PGSKShareDataImage)]);
     }
     if (PGSKServiceSupportedDataTypeVideo == type){
-        assert([data conformsToProtocol:@protocol(PGSKServiceDataVideo)]);
+        assert([data conformsToProtocol:@protocol(PGSKShareDataVideo)]);
     }
     if (PGSKServiceSupportedDataTypeWebPage == type){
-        assert([data conformsToProtocol:@protocol(PGSKServiceDataWebPage)]);
+        assert([data conformsToProtocol:@protocol(PGSKShareDataWebPage)]);
     }
     
     NSObject<PGSKService>* service = PGShareKitCreateService(serviceInfo);
@@ -103,15 +103,10 @@ static RACSignal* PGShareKitCreateShareSignal(NSDictionary* dict, id<PGSKService
                              map:^id(RACTuple* value) {
                                  return value.second;
                              }];
-    RACSignal* cancelSignal = [[service rac_signalForSelector:@selector(serviceDidCancel:)
-                                                 fromProtocol:@protocol(PGSKServiceDelegate)]
-                               map:^id(id value) {
-                                   return PGShareKitReturnError();
-                               }];
     
     [service performSelector:PGShareKitGetServiceSelector(type)
                   withObject:data];
-    return [RACSignal merge:@[successSignal, failSignal, cancelSignal]];
+    return [RACSignal merge:@[successSignal, failSignal]];
 }
 
 

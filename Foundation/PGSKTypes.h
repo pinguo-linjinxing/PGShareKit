@@ -29,3 +29,13 @@ typedef NS_OPTIONS(NSUInteger, PGSKServiceSupportedDataType) {
 };
 
 
+/**
+ 分享的网页内容类型
+ */
+typedef NS_OPTIONS(NSUInteger, PGSKServiceWebPageDataContentType) {
+    PGSKServiceWebPageDataContentTypeText,
+    PGSKServiceWebPageDataContentTypeImage,
+    PGSKServiceWebPageDataContentTypeVideo
+};
+
+
