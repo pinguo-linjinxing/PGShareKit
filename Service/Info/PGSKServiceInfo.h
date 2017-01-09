@@ -24,17 +24,17 @@ FOUNDATION_EXPORT NSString *const PKSGServiceInstagram ;
 @property(nonatomic, readonly, strong) NSString* key;
 @property(nonatomic, readonly, strong) NSString* appKey;
 @property(nonatomic, readonly, strong) NSString* appSecret;
+@property(nonatomic, readonly, strong) NSString* redirectURL;
 @property(nonatomic, readonly, strong) UIImage* slogan;
 @property(nonatomic, readonly, assign) PGSKServiceSupportedDataType supportedShareType;
 @end
 
 
 
+NSString* PGSKServiceInfoGetAppKeyWithKey(NSString*key);
+//id<PGSKServiceInfo> PGSKServiceInfoLoadWithKey(NSString*key);
 
-typedef void(^PGSKConfigLoadServiceSuccess)(NSArray<id<PGSKServiceInfo>>*services);
-
-void PGSKServiceInfoLoadConfig(NSDictionary* param,PGSKConfigLoadServiceSuccess success, PGSKFailBlock fail);
-
+NSArray<id<PGSKServiceInfo>>* PGSKServiceInfoLoadCameraOrder();
 
 
 

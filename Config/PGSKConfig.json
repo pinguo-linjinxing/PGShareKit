@@ -1,0 +1,37 @@
+{
+    "version": "1.0",
+    "services": {
+                 "wechat":{
+                     "appKey":"wx9eb0c14967cc1036",
+                     "appSecret":"2a9b1510924ee1216641afb61e0b80c0",
+                     "slogan":"wx",
+                     "supportedShareType":["image", "webpage"]
+                 },
+                 "wechatMoments":{
+                     "appKey":"wx9eb0c14967cc1036",
+                     "appSecret":"2a9b1510924ee1216641afb61e0b80c0",
+                     "slogan":"wx",
+                     "supportedShareType":["image", "webpage"]
+                 },
+                 "sina":{
+                     "appKey":"3555837032",
+                     "appSecret":"31926fa05dc1fc58e89ce0f15e8cfa86",
+                     "slogan":"sina",
+                     "redirectURL":"http://hsnkit.com/weibo/callback",
+                     "supportedShareType":["image", "webpage"]
+                 },
+                 "qqzone":{
+                     "appKey":"100303003",
+                     "slogan":"qqzone",
+                     "supportedShareType":["image", "webpage"]
+                 },
+                 "qq":{
+                     "appKey":"QQ05FA809B",
+                     "slogan":"qq",
+                     "supportedShareType":["image", "webpage"]
+                 }
+                 
+    },
+    "cameraOrder":["wechat", "wechatMoments", "sina", "qq"],
+    
+}

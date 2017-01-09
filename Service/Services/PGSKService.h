@@ -15,10 +15,10 @@
 
 @protocol PGSKService<NSObject>
 @property(nonatomic, weak) id<PGSKServiceDelegate> delegate;
-//@property(nonatomic, readonly) BOOL isInstalled;
+
 //@property(nonatomic, readonly) BOOL isInitDone;
 //- (void)shareText:(id<PGSKShareDataText>)text;
-+ (BOOL)isInstalled;
++ (BOOL) canShare;
 - (void)shareImage:(id<PGSKShareDataImage>)image;
 //- (void)shareMultiImages:(id<PGSKShareDataMultiImages>)images;
 - (void)shareWebPage:(id<PGSKShareDataWebPage>)webpage;

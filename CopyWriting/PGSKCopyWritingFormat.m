@@ -6,7 +6,7 @@
 //  Copyright © 2016年 linjinxing. All rights reserved.
 //
 
-#import "CopyWritingFormat.h"
+#import "PGSKCopyWritingFormat.h"
 
 
 
