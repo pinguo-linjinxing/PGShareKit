@@ -10,11 +10,18 @@
 #import "PGSKShareData.h"
 #import "PGSKTypes.h"
 
-FOUNDATION_EXPORT NSString *const PKSGServiceWechat ;
-FOUNDATION_EXPORT NSString *const PKSGServiceQQ ;
-FOUNDATION_EXPORT NSString *const PKSGServiceWeiBo ;
-FOUNDATION_EXPORT NSString *const PKSGServiceQQZone;
-FOUNDATION_EXPORT NSString *const PKSGServiceInstagram ;
+FOUNDATION_EXPORT NSString *const kPKSGServiceWechat ;
+FOUNDATION_EXPORT NSString *const kPKSGServiceQQ ;
+FOUNDATION_EXPORT NSString *const kPKSGServiceWeiBo ;
+FOUNDATION_EXPORT NSString *const kPKSGServiceQQZone;
+FOUNDATION_EXPORT NSString *const kPKSGServiceInstagram ;
+
+
+/* 支持分享的数据类型 */
+FOUNDATION_EXPORT NSString *const kPKSGServiceSupportedTypeImage   ;
+FOUNDATION_EXPORT NSString *const kPKSGServiceSupportedTypeWebpage ;
+FOUNDATION_EXPORT NSString *const kPKSGServiceSupportedTypeVideo   ;
+
 
 /**
  各社交平台属性定义
@@ -25,13 +32,14 @@ FOUNDATION_EXPORT NSString *const PKSGServiceInstagram ;
 @property(nonatomic, readonly, strong) NSString* appKey;
 @property(nonatomic, readonly, strong) NSString* appSecret;
 @property(nonatomic, readonly, strong) NSString* redirectURL;
-@property(nonatomic, readonly, strong) UIImage* slogan;
+@property(nonatomic, readonly, strong) NSURL* sloganURL;
 @property(nonatomic, readonly, assign) PGSKServiceSupportedDataType supportedShareType;
 @end
 
 
 
 NSString* PGSKServiceInfoGetAppKeyWithKey(NSString*key);
+UIImage* PGSKServiceInfoGetImageWithKey(NSString*key);
 //id<PGSKServiceInfo> PGSKServiceInfoLoadWithKey(NSString*key);
 
 NSArray<id<PGSKServiceInfo>>* PGSKServiceInfoLoadCameraOrder();

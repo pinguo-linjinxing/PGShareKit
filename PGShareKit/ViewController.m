@@ -7,6 +7,8 @@
 //
 
 #import "ViewController.h"
+#import "PGShareKitBLL.h"
+#import "PGSKShareData.h"
 
 @interface ViewController ()
 
@@ -16,6 +18,23 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    PGShareKitBLLShare(^(PGSKServiceSupportedDataType type,
+                         PGSKDataBlock success,
+                         PGSKFailBlock fail) {
+        NSLog(@"type:%@", @(type));
+        if (/* DISABLES CODE */ (1)){
+            if (success) success([PGSKShareDataImagePOD shareDataImagePODWithTitle:@"text"
+                                                                              desc:@"description aa"
+                                                                             image:[UIImage imageNamed:@""]
+                                                                     thubnailImage:[UIImage imageWithContentsOfFile:@""]]);
+        }else{
+            if (fail) fail([NSError errorWithDomain:@"com.sharekit.test" code:-1 userInfo:nil]);
+        }
+    }, ^(id data) {
+        NSLog(@"data:%@", data);
+    }, ^(NSError *error) {
+        NSLog(@"error:%@", error);
+    });
     // Do any additional setup after loading the view, typically from a nib.
 }
 

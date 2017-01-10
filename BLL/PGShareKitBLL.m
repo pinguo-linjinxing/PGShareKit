@@ -12,16 +12,16 @@
 #import "PGSKServiceSelectorController.h"
 #import "PGSKShareData.h"
 
-#import <ReactiveCocoa/ReactiveCocoa.h>
 
-NSString *const PKSGServiceDataDictKeyAuthor       = @"author";
-NSString *const PKSGServiceDataDictKeyDescription  = @"description";
-NSString *const PKSGServiceDataDictKeyTitle        = @"title";
-NSString *const PKSGServiceDataDictKeyMessage      = @"message";
-NSString *const PKSGServiceDataDictKeyThumbnail    = @"thumbnail";
-NSString *const PKSGServiceDataDictKeyThumbnailURL = @"thumbnailURL";
-NSString *const PKSGServiceDataDictKeyURL          = @"URL";
-NSString *const PKSGServiceDataDictKeyDataType     = @"supportedShareType";
+
+NSString *const kPKSGServiceDataDictKeyAuthor       = @"author";
+NSString *const kPKSGServiceDataDictKeyDescription  = @"description";
+NSString *const kPKSGServiceDataDictKeyTitle        = @"title";
+NSString *const kPKSGServiceDataDictKeyMessage      = @"message";
+NSString *const kPKSGServiceDataDictKeyThumbnail    = @"thumbnail";
+NSString *const kPKSGServiceDataDictKeyThumbnailURL = @"thumbnailURL";
+NSString *const kPKSGServiceDataDictKeyURL          = @"URL";
+NSString *const kPKSGServiceDataDictKeyDataType     = @"supportedShareType";
 
 
 NSString *const  PGShareKitErrorDomain = @"PGShareKitErrorDomain";
@@ -33,15 +33,18 @@ static RACSignal* PGShareKitCreateShareSignal(NSDictionary* dict, id<PGSKService
 
 
 void PGShareKitBLLShare(PGShareKitBLLGetSharInfo getParamBlock,
-                        PGSKSuccessBlock success,
-                        PGSKFailBlock fail){
-    [[[RACSignal createSignal:^RACDisposable *(id<RACSubscriber> subscriber) {
-        PGSKServiceInfoLoadConfig(nil, ^(NSArray<id<PGSKServiceInfo>> *services) {
-            [subscriber sendNext:services];
-            [subscriber sendCompleted];
-        }, ^(NSError *error) {
-            [subscriber sendError:error];
-        });
+                              PGSKSuccessBlock success,
+                              PGSKFailBlock fail)
+//RACSignal* PGShareKitBLLShare(PGShareKitBLLGetSharInfo)
+{
+   [[[[RACSignal createSignal:^RACDisposable *(id<RACSubscriber> subscriber) {
+//        PGSKServiceInfoLoadConfig(nil, ^(NSArray<id<PGSKServiceInfo>> *services) {
+//            [subscriber sendNext:services];
+//            [subscriber sendCompleted];
+//        }, ^(NSError *error) {
+//            [subscriber sendError:error];
+//        });
+        [subscriber sendNext:PGSKServiceInfoLoadCameraOrder()];
         return nil;
     }]
      flattenMap:^RACStream *(NSArray<id<PGSKServiceInfo>> *services) {
@@ -71,13 +74,17 @@ void PGShareKitBLLShare(PGShareKitBLLGetSharInfo getParamBlock,
          }]
                  flatten];
 
+    }] subscribeNext:^(id x) {
+        if (success) success(x);
+    } error:^(NSError *error) {
+        if (fail) fail(error);
     }];
 }
 
 static RACSignal* PGShareKitCreateShareSignal(NSDictionary* dict, id<PGSKServiceInfo> serviceInfo){
-    assert(nil != dict[PKSGServiceDataDictKeyDataType]);
+    assert(nil != dict[kPKSGServiceDataDictKeyDataType]);
     //                 NSAssert(nil != dict[PKSGServiceDataDictKeyDataType], @"PKSGServiceDataDictKeyDataType必须要传");
-    PGSKServiceSupportedDataType type = [dict[PKSGServiceDataDictKeyDataType] unsignedIntegerValue];
+    PGSKServiceSupportedDataType type = [dict[kPKSGServiceDataDictKeyDataType] unsignedIntegerValue];
     
     id data = PGShareKitCreateData(type, dict);
     [data setValuesForKeysWithDictionary:dict];
@@ -93,12 +100,12 @@ static RACSignal* PGShareKitCreateShareSignal(NSDictionary* dict, id<PGSKService
     
     NSObject<PGSKService>* service = PGShareKitCreateService(serviceInfo);
     assert([service conformsToProtocol:@protocol(PGSKService)]);
-    RACSignal* successSignal = [[service rac_signalForSelector:@selector(service:didSuccess:)
+    RACSignal* successSignal = [[service rac_signalForSelector:@selector(service:didCompleteWithResults:)
                                                   fromProtocol:@protocol(PGSKServiceDelegate)]
                                 map:^id(RACTuple* value) {
                                     return value.second;
                                 }];
-    RACSignal* failSignal = [[service rac_signalForSelector:@selector(service:didFail:)
+    RACSignal* failSignal = [[service rac_signalForSelector:@selector(service:didFailWithError:)
                                                fromProtocol:@protocol(PGSKServiceDelegate)]
                              map:^id(RACTuple* value) {
                                  return value.second;

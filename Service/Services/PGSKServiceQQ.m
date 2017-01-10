@@ -27,7 +27,7 @@
     QQApiImageObject *imgObj = [QQApiImageObject objectWithData:UIImageJPEGRepresentation(image.image, 0.9)
                                                previewImageData:UIImageJPEGRepresentation(image.thumbnail, 0.8)
                                                           title:image.title
-                                                    description:image.message];
+                                                    description:image.desc];
     SendMessageToQQReq* req = [SendMessageToQQReq reqWithContent:imgObj];
 }
 
@@ -41,7 +41,7 @@
 //        case PGSKServiceWebPageDataContentTypeVideo:{
             QQApiNewsObject* obj = [QQApiNewsObject objectWithURL:[NSURL URLWithString:webpage.url]
                                                                       title:webpage.title
-                                                                description:webpage.message
+                                                                description:webpage.desc
                                                            previewImageData:UIImageJPEGRepresentation(webpage.thumbnail, 0.8)];
             
 //            break;
@@ -60,7 +60,7 @@
 {
     if (_inited) return;
 //    _auth = [[TencentOAuth alloc] initWithAppId:_appKey andDelegate:self];
-    [[TencentOAuth alloc] initWithAppId:PGSKServiceInfoGetAppKeyWithKey(PKSGServiceWeiBo) andDelegate:self];
+    [[TencentOAuth alloc] initWithAppId:PGSKServiceInfoGetAppKeyWithKey(kPKSGServiceQQ) andDelegate:self];
     _inited = YES;
 }
 

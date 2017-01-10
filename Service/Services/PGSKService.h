@@ -25,6 +25,7 @@
 
 @optional
 - (void)shareVideo:(id<PGSKShareDataVideo>)video;
+- (void)shareComposer:(id<PGSKShareDataComposer>)composer;
 @end
 
 @protocol PGSKServiceDelegate <NSObject>

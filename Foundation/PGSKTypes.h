@@ -7,6 +7,9 @@
 //
 #import <Foundation/Foundation.h>
 
+
+typedef void (^PGSKVoidBlock)();
+typedef id (^PGSKGetDataBlock)();
 typedef void(^PGSKDataBlock)(id data);
 typedef PGSKDataBlock PGSKSuccessBlock;
 typedef void(^PGSKFailBlock)(NSError* error);
@@ -33,7 +36,7 @@ typedef NS_OPTIONS(NSUInteger, PGSKServiceSupportedDataType) {
  分享的网页内容类型
  */
 typedef NS_OPTIONS(NSUInteger, PGSKServiceWebPageDataContentType) {
-    PGSKServiceWebPageDataContentTypeText,
+    PGSKServiceWebPageDataContentTypeNormal,
     PGSKServiceWebPageDataContentTypeImage,
     PGSKServiceWebPageDataContentTypeVideo
 };

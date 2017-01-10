@@ -19,11 +19,13 @@
 		682864491E1599D800D56F43 /* PGSKServiceSelectorView.m in Sources */ = {isa = PBXBuildFile; fileRef = 682864481E1599D800D56F43 /* PGSKServiceSelectorView.m */; };
 		6828644C1E159BD500D56F43 /* PGSKServiceSelectorController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6828644B1E159BD500D56F43 /* PGSKServiceSelectorController.m */; };
 		682864611E15B39400D56F43 /* PGShareKitBLL.m in Sources */ = {isa = PBXBuildFile; fileRef = 682864601E15B39400D56F43 /* PGShareKitBLL.m */; };
+		684C06B81E24C9E100BAB9E9 /* NSObject+Init.m in Sources */ = {isa = PBXBuildFile; fileRef = 684C06B71E24C9E100BAB9E9 /* NSObject+Init.m */; };
 		68637A2B1E20B2E400082820 /* PGSKConfig.json in Resources */ = {isa = PBXBuildFile; fileRef = 68637A2A1E20B2E400082820 /* PGSKConfig.json */; };
 		68637A2E1E20B31400082820 /* PGSKConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = 68637A2D1E20B31400082820 /* PGSKConfig.m */; };
 		68637A311E211F1000082820 /* PGSKServiceSinaWeibo.m in Sources */ = {isa = PBXBuildFile; fileRef = 68637A301E211F1000082820 /* PGSKServiceSinaWeibo.m */; };
 		68637A391E21238000082820 /* NSArray+BlocksKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 68637A351E21238000082820 /* NSArray+BlocksKit.m */; };
 		68637A3A1E21238000082820 /* NSDictionary+BlocksKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 68637A381E21238000082820 /* NSDictionary+BlocksKit.m */; };
+		68637A3C1E23186200082820 /* PGSNChannelSelector.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 68637A3B1E23186200082820 /* PGSNChannelSelector.bundle */; };
 		68C4E8921E171FC700F3A144 /* PGShareKitDictionaryKey.m in Sources */ = {isa = PBXBuildFile; fileRef = 68C4E8911E171FC700F3A144 /* PGShareKitDictionaryKey.m */; };
 		68C4E8A01E1BCBE300F3A144 /* PGSKCopyWritingFormat.m in Sources */ = {isa = PBXBuildFile; fileRef = 68C4E89F1E1BCBE300F3A144 /* PGSKCopyWritingFormat.m */; };
 		68C4E8B51E1BCCBA00F3A144 /* PGSKServiceInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 68C4E8A81E1BCCBA00F3A144 /* PGSKServiceInfo.m */; };
@@ -31,7 +33,6 @@
 		68C4E8B81E1BCCBA00F3A144 /* PGSKService.m in Sources */ = {isa = PBXBuildFile; fileRef = 68C4E8B01E1BCCBA00F3A144 /* PGSKService.m */; };
 		68C4E8B91E1BCCBA00F3A144 /* PGSKServiceQQ.m in Sources */ = {isa = PBXBuildFile; fileRef = 68C4E8B21E1BCCBA00F3A144 /* PGSKServiceQQ.m */; };
 		68C4E8BA1E1BCCBA00F3A144 /* PGSKServiceWechat.m in Sources */ = {isa = PBXBuildFile; fileRef = 68C4E8B41E1BCCBA00F3A144 /* PGSKServiceWechat.m */; };
-		68FEFD681E1CC0F8004DDFB3 /* PGSKServiceInfoPOD.m in Sources */ = {isa = PBXBuildFile; fileRef = 68FEFD671E1CC0F8004DDFB3 /* PGSKServiceInfoPOD.m */; };
 		D3C4AD8719C203CC1272B3D4 /* libPods-PGShareKit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7B945AA3CEB7D8810318367C /* libPods-PGShareKit.a */; };
 /* End PBXBuildFile section */
 
@@ -79,6 +80,8 @@
 		6828645F1E15B39400D56F43 /* PGShareKitBLL.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PGShareKitBLL.h; sourceTree = "<group>"; };
 		682864601E15B39400D56F43 /* PGShareKitBLL.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PGShareKitBLL.m; sourceTree = "<group>"; };
 		683D5CE41E1D0C630003F401 /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ViewController.h; path = PGShareKit/ViewController.h; sourceTree = "<group>"; };
+		684C06B61E24C9E100BAB9E9 /* NSObject+Init.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+Init.h"; sourceTree = "<group>"; };
+		684C06B71E24C9E100BAB9E9 /* NSObject+Init.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+Init.m"; sourceTree = "<group>"; };
 		68637A2A1E20B2E400082820 /* PGSKConfig.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = PGSKConfig.json; sourceTree = "<group>"; };
 		68637A2C1E20B31400082820 /* PGSKConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PGSKConfig.h; sourceTree = "<group>"; };
 		68637A2D1E20B31400082820 /* PGSKConfig.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PGSKConfig.m; sourceTree = "<group>"; };
@@ -89,6 +92,7 @@
 		68637A351E21238000082820 /* NSArray+BlocksKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+BlocksKit.m"; sourceTree = "<group>"; };
 		68637A371E21238000082820 /* NSDictionary+BlocksKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+BlocksKit.h"; sourceTree = "<group>"; };
 		68637A381E21238000082820 /* NSDictionary+BlocksKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+BlocksKit.m"; sourceTree = "<group>"; };
+		68637A3B1E23186200082820 /* PGSNChannelSelector.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = PGSNChannelSelector.bundle; sourceTree = "<group>"; };
 		68C4E8901E171FC700F3A144 /* PGShareKitDictionaryKey.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PGShareKitDictionaryKey.h; sourceTree = "<group>"; };
 		68C4E8911E171FC700F3A144 /* PGShareKitDictionaryKey.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PGShareKitDictionaryKey.m; sourceTree = "<group>"; };
 		68C4E89E1E1BCBE300F3A144 /* PGSKCopyWritingFormat.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PGSKCopyWritingFormat.h; sourceTree = "<group>"; };
@@ -103,8 +107,6 @@
 		68C4E8B21E1BCCBA00F3A144 /* PGSKServiceQQ.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PGSKServiceQQ.m; sourceTree = "<group>"; };
 		68C4E8B31E1BCCBA00F3A144 /* PGSKServiceWechat.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PGSKServiceWechat.h; sourceTree = "<group>"; };
 		68C4E8B41E1BCCBA00F3A144 /* PGSKServiceWechat.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PGSKServiceWechat.m; sourceTree = "<group>"; };
-		68FEFD661E1CC0F8004DDFB3 /* PGSKServiceInfoPOD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PGSKServiceInfoPOD.h; sourceTree = "<group>"; };
-		68FEFD671E1CC0F8004DDFB3 /* PGSKServiceInfoPOD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PGSKServiceInfoPOD.m; sourceTree = "<group>"; };
 		7B945AA3CEB7D8810318367C /* libPods-PGShareKit.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-PGShareKit.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BC50A3D8DCEAFBAC871F6F97 /* Pods-PGShareKit.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PGShareKit.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PGShareKit/Pods-PGShareKit.debug.xcconfig"; sourceTree = "<group>"; };
 		C5DFEA447AC37F308D461086 /* Pods-PGShareKit.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PGShareKit.release.xcconfig"; path = "Pods/Target Support Files/Pods-PGShareKit/Pods-PGShareKit.release.xcconfig"; sourceTree = "<group>"; };
@@ -181,6 +183,7 @@
 				682864081E153B1000D56F43 /* AppDelegate.m */,
 				6828640A1E153B1000D56F43 /* ViewController.h */,
 				6828640B1E153B1000D56F43 /* ViewController.m */,
+				68637A3B1E23186200082820 /* PGSNChannelSelector.bundle */,
 				6828640D1E153B1000D56F43 /* Main.storyboard */,
 				682864101E153B1000D56F43 /* Assets.xcassets */,
 				682864121E153B1000D56F43 /* LaunchScreen.storyboard */,
@@ -241,6 +244,7 @@
 		6828644E1E15A0CE00D56F43 /* Foundation */ = {
 			isa = PBXGroup;
 			children = (
+				683F83781E24B51C00D9DD96 /* NSObject */,
 				68637A321E21238000082820 /* NSArray */,
 				68637A361E21238000082820 /* NSDictionary */,
 				682864501E15A29500D56F43 /* PGSKTypes.h */,
@@ -257,6 +261,16 @@
 				682864601E15B39400D56F43 /* PGShareKitBLL.m */,
 			);
 			path = BLL;
+			sourceTree = "<group>";
+		};
+		683F83781E24B51C00D9DD96 /* NSObject */ = {
+			isa = PBXGroup;
+			children = (
+				684C06B61E24C9E100BAB9E9 /* NSObject+Init.h */,
+				684C06B71E24C9E100BAB9E9 /* NSObject+Init.m */,
+			);
+			name = NSObject;
+			path = "../../ios-newcamera360/Modules/SNS/Classes/公共/扩展/基础/NSObject";
 			sourceTree = "<group>";
 		};
 		68637A291E20B2E400082820 /* Config */ = {
@@ -314,8 +328,6 @@
 			children = (
 				68C4E8A71E1BCCBA00F3A144 /* PGSKServiceInfo.h */,
 				68C4E8A81E1BCCBA00F3A144 /* PGSKServiceInfo.m */,
-				68FEFD661E1CC0F8004DDFB3 /* PGSKServiceInfoPOD.h */,
-				68FEFD671E1CC0F8004DDFB3 /* PGSKServiceInfoPOD.m */,
 			);
 			path = Info;
 			sourceTree = "<group>";
@@ -455,6 +467,7 @@
 			files = (
 				682864141E153B1000D56F43 /* LaunchScreen.storyboard in Resources */,
 				682864111E153B1000D56F43 /* Assets.xcassets in Resources */,
+				68637A3C1E23186200082820 /* PGSNChannelSelector.bundle in Resources */,
 				68637A2B1E20B2E400082820 /* PGSKConfig.json in Resources */,
 				6828640F1E153B1000D56F43 /* Main.storyboard in Resources */,
 			);
@@ -533,10 +546,10 @@
 				68C4E8BA1E1BCCBA00F3A144 /* PGSKServiceWechat.m in Sources */,
 				682864611E15B39400D56F43 /* PGShareKitBLL.m in Sources */,
 				682864491E1599D800D56F43 /* PGSKServiceSelectorView.m in Sources */,
-				68FEFD681E1CC0F8004DDFB3 /* PGSKServiceInfoPOD.m in Sources */,
 				68637A2E1E20B31400082820 /* PGSKConfig.m in Sources */,
 				68637A391E21238000082820 /* NSArray+BlocksKit.m in Sources */,
 				6828640C1E153B1000D56F43 /* ViewController.m in Sources */,
+				684C06B81E24C9E100BAB9E9 /* NSObject+Init.m in Sources */,
 				68C4E8B91E1BCCBA00F3A144 /* PGSKServiceQQ.m in Sources */,
 				68637A311E211F1000082820 /* PGSKServiceSinaWeibo.m in Sources */,
 				682864091E153B1000D56F43 /* AppDelegate.m in Sources */,

@@ -12,8 +12,8 @@
 
 
 NSObject<PGSKService>* PGShareKitCreateService(id<PGSKServiceInfo> serviceInfo){
-    return [@{PKSGServiceWechat:[PGSKServiceWechat class],
-              PKSGServiceQQ:[PGSKServiceQQ class]
+    return [@{kPKSGServiceWechat:[PGSKServiceWechat class],
+              kPKSGServiceQQ:[PGSKServiceQQ class]
               }
             valueForKey:serviceInfo.name];
 }

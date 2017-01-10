@@ -10,7 +10,7 @@
                  "wechatMoments":{
                      "appKey":"wx9eb0c14967cc1036",
                      "appSecret":"2a9b1510924ee1216641afb61e0b80c0",
-                     "slogan":"wx",
+                     "slogan":"pyq",
                      "supportedShareType":["image", "webpage"]
                  },
                  "sina":{

@@ -8,13 +8,14 @@
 
 #import <Foundation/Foundation.h>
 #import "PGSKTypes.h"
+#import <ReactiveCocoa/ReactiveCocoa.h>
 
-FOUNDATION_EXPORT NSString *const PKSGServiceDataDictKeyAuthor ;
-FOUNDATION_EXPORT NSString *const PKSGServiceDataDictKeyDescription ;
-FOUNDATION_EXPORT NSString *const PKSGServiceDataDictKeyThumbnail ;
-FOUNDATION_EXPORT NSString *const PKSGServiceDataDictKeyThumbnailURL;
-FOUNDATION_EXPORT NSString *const PKSGServiceDataDictKeyURL;
-FOUNDATION_EXPORT NSString *const PKSGServiceDataDictKeyDataType;
+FOUNDATION_EXPORT NSString *const kPKSGServiceDataDictKeyAuthor ;
+FOUNDATION_EXPORT NSString *const kPKSGServiceDataDictKeyDescription ;
+FOUNDATION_EXPORT NSString *const kPKSGServiceDataDictKeyThumbnail ;
+FOUNDATION_EXPORT NSString *const kPKSGServiceDataDictKeyThumbnailURL;
+FOUNDATION_EXPORT NSString *const kPKSGServiceDataDictKeyURL;
+FOUNDATION_EXPORT NSString *const kPKSGServiceDataDictKeyDataType;
 
 
 /**

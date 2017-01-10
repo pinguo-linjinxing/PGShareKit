@@ -11,7 +11,11 @@
 #import "PGSKTypes.h"
 
 FOUNDATION_EXPORT NSString* const PGSKConfigDictionaryKeyServices;
+FOUNDATION_EXPORT NSString* const PGSKConfigDictionaryKeySlogan;
+FOUNDATION_EXPORT NSString* const PGSKConfigDictionaryKey;
 FOUNDATION_EXPORT NSString* const PGSKConfigDictionaryKeyCameraOrder;
+FOUNDATION_EXPORT NSString* const PGSKConfigDictionaryKeySupportedShareType;
+FOUNDATION_EXPORT NSString* const PGSKConfigBundleName;
 
 NSDictionary* PGSKLoadConfigSyn();
 

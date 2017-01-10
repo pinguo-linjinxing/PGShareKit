@@ -12,7 +12,7 @@
 
 @interface PGSKShareDataTextPOD()
 @property(nonatomic) NSString* title;
-@property(nonatomic) NSString* message;
+@property(nonatomic) NSString* desc;
 @end
 
 @implementation PGSKShareDataTextPOD
@@ -21,19 +21,29 @@
 
 @interface PGSKShareDataImagePOD()
 @property(nonatomic) NSString* title;
-@property(nonatomic) NSString* message;
+@property(nonatomic) NSString* desc;
 @property(nonatomic) UIImage* image;
-@property(nonatomic) NSURL* url;
+@property(nonatomic) UIImage* thumbnail;
 @end
 
 @implementation PGSKShareDataImagePOD
-
++ (instancetype)shareDataImagePODWithTitle:(NSString*)title
+                                      desc:(NSString*)desc
+                                     image:(UIImage*)image
+                             thubnailImage:(UIImage*)thubnailImage{
+    PGSKShareDataImagePOD* pod = [[self alloc] init];
+    pod.title = title;
+    pod.desc = desc;
+    pod.image = image;
+    pod.thumbnail = thubnailImage;
+    return pod;
+}
 @end
 
 
 @interface PGSKShareDataVideoPOD()
 @property(nonatomic) NSString* title;
-@property(nonatomic) NSString* message;
+@property(nonatomic) NSString* desc;
 @property(nonatomic) UIImage* thumbnail;
 @property(nonatomic) NSURL* thumbnailUrl;
 @property(nonatomic) NSURL* url;
@@ -44,8 +54,9 @@
 @end
 
 @interface PGSKShareDataWebPagePOD()
+@property(nonatomic) PGSKServiceWebPageDataContentType type;
 @property(nonatomic) NSString* title;
-@property(nonatomic) NSString* message;
+@property(nonatomic) NSString* desc;
 @property(nonatomic) UIImage* thumbnail;
 @property(nonatomic) NSURL* thumbnailUrl;
 @property(nonatomic) NSURL* url;
@@ -54,6 +65,19 @@
 @implementation PGSKShareDataWebPagePOD
 
 @end
+
+@interface PGSKShareDataComposerPOD()
+@property(nonatomic) NSString* content;
+@property(nonatomic) UIImage* thumbnail;
+@property(nonatomic) NSURL* url;
+@property(nonatomic) NSArray<NSString*>* tags;
+@end
+
+@implementation PGSKShareDataComposerPOD
+
+@end
+
+
 
 
 
