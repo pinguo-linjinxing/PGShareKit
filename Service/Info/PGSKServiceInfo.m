@@ -107,9 +107,9 @@ NSArray<id<PGSKServiceInfo>>* PGSKServiceInfoLoadCameraOrder(){
                                                 transform:^id(NSString *keypath, id value) {
                                                     PGSKGetDataBlock block = @{
                                                                                PGSKConfigDictionaryKeySlogan:^{
-                                                                                   return [NSURL URLWithString:[[[NSBundle mainBundle] pathForResource:PGSKConfigBundleName
-                                                                                                                                                ofType:nil]
-                                                                                                                stringByAppendingPathComponent:value]];
+                                                                                   return [[[NSBundle mainBundle] pathForResource:PGSKConfigBundleName
+                                                                                                                           ofType:nil]
+                                                                                           stringByAppendingPathComponent:value];
                                                                                },
                                                                                PGSKConfigDictionaryKeySupportedShareType:^{
                                                                                    return @([value bk_reduceInteger:0 withBlock:^NSInteger(NSInteger result, id  _Nonnull obj) {

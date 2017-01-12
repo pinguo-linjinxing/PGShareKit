@@ -40,6 +40,7 @@
 
 
 NSObject<PGSKService>* PGShareKitCreateService(id<PGSKServiceInfo> serviceInfo);
+BOOL PGShareKitServiceCanShare(id<PGSKServiceInfo> serviceInfo);
 SEL PGShareKitGetServiceSelector(PGSKServiceSupportedDataType type);
 
 

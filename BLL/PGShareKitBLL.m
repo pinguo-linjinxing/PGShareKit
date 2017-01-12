@@ -11,7 +11,7 @@
 #import "PGSKService.h"
 #import "PGSKServiceSelectorController.h"
 #import "PGSKShareData.h"
-
+#import "NSArray+BlocksKit.h"
 
 
 NSString *const kPKSGServiceDataDictKeyAuthor       = @"author";
@@ -37,7 +37,7 @@ void PGShareKitBLLShare(PGShareKitBLLGetSharInfo getParamBlock,
                               PGSKFailBlock fail)
 //RACSignal* PGShareKitBLLShare(PGShareKitBLLGetSharInfo)
 {
-   [[[[RACSignal createSignal:^RACDisposable *(id<RACSubscriber> subscriber) {
+   [[[[[RACSignal createSignal:^RACDisposable *(id<RACSubscriber> subscriber) {
 //        PGSKServiceInfoLoadConfig(nil, ^(NSArray<id<PGSKServiceInfo>> *services) {
 //            [subscriber sendNext:services];
 //            [subscriber sendCompleted];
@@ -46,6 +46,11 @@ void PGShareKitBLLShare(PGShareKitBLLGetSharInfo getParamBlock,
 //        });
         [subscriber sendNext:PGSKServiceInfoLoadCameraOrder()];
         return nil;
+    }] /* 过滤没安装的 */
+       map:^id(NSArray<id<PGSKServiceInfo>> *services) {
+       return [services bk_select:^BOOL(id<PGSKServiceInfo>  _Nonnull obj) {
+           return PGShareKitServiceCanShare(obj);
+       }];
     }]
      flattenMap:^RACStream *(NSArray<id<PGSKServiceInfo>> *services) {
       return [RACSignal createSignal:^RACDisposable *(id<RACSubscriber> subscriber) {

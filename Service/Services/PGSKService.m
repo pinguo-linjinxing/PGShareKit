@@ -9,16 +9,24 @@
 #import "PGSKService.h"
 #import "PGSKServiceQQ.h"
 #import "PGSKServiceWechat.h"
-
+#import "PGSKServiceSinaWeibo.h"
 
 NSObject<PGSKService>* PGShareKitCreateService(id<PGSKServiceInfo> serviceInfo){
     return [@{kPKSGServiceWechat:[PGSKServiceWechat class],
-              kPKSGServiceQQ:[PGSKServiceQQ class]
+              kPKSGServiceQQ:[PGSKServiceQQ class],
+              kPKSGServiceWeiBo:[PGSKServiceSinaWeibo class],
               }
             valueForKey:serviceInfo.name];
 }
 
-
+BOOL PGShareKitServiceCanShare(id<PGSKServiceInfo> serviceInfo){
+    return [[@{kPKSGServiceWechat:@([PGSKServiceWechat canShare]),
+              kPKSGServiceQQ:@([PGSKServiceQQ canShare]),
+              kPKSGServiceWeiBo:@([PGSKServiceSinaWeibo canShare]),
+              }
+            valueForKey:serviceInfo.name]
+            boolValue];
+}
 
 
 SEL PGShareKitGetServiceSelector(PGSKServiceSupportedDataType type){

@@ -43,12 +43,18 @@
     if (self.cancelBlock) {
         self.cancelBlock(selector);
     }
+    [selector dismiss];
 }
 - (void)selector:(id<PGSKServiceSelector>)selector didSelectIndex:(NSUInteger)index{
     if (self.selectBlock) {
         self.selectBlock(self.service[index]);
     }
+    [selector dismiss];
 }
 @end
+
+
+
+
 
 
