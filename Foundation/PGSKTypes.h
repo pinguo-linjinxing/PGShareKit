@@ -26,10 +26,10 @@ typedef NS_OPTIONS(NSUInteger, PGSKServiceSupportedDataType) {
     PGSKServiceSupportedDataTypeText        = 1 << 0,
     PGSKServiceSupportedDataTypeImage       = 1 << 1,
     PGSKServiceSupportedDataTypeMultiImages = 1 << 2,
-    PGSKServiceSupportedDataTypeGif      = 1 << 3,
-    PGSKServiceSupportedDataTypeVideo    = 1 << 4,
-    PGSKServiceSupportedDataTypeWebPage  = 1 << 5,
-    PGSKServiceSupportedDataTypeComposer = 1 << 6,
+    PGSKServiceSupportedDataTypeGif         = 1 << 3,
+    PGSKServiceSupportedDataTypeVideo       = 1 << 4,
+    PGSKServiceSupportedDataTypeWebPage     = 1 << 5,
+    PGSKServiceSupportedDataTypeComposer    = 1 << 6,
 };
 
 

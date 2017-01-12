@@ -12,6 +12,7 @@
 #import "NSObject+Init.h"
 #import "NSDictionary+BlocksKit.h"
 
+/* 以下值要和配置里的对应，否则会出错 */
 NSString *const kPKSGServiceWechat = @"wechat";
 NSString *const kPKSGServiceWechatMoments = @"wechatMoments";
 NSString *const kPKSGServiceQQ = @"qq";
@@ -43,17 +44,22 @@ NSString *const kPKSGServiceSupportedTypeVideo = @"video";
 //}
 @end
 
-static NSDictionary* PGSKServiceSupportedDataTypeStringToNSNumberDictionary(){
-    return @{
-             kPKSGServiceSupportedTypeImage:@(PGSKServiceSupportedDataTypeImage),
-             kPKSGServiceSupportedTypeWebpage:@(PGSKServiceSupportedDataTypeWebPage),
-             kPKSGServiceSupportedTypeVideo:@(PGSKServiceSupportedDataTypeVideo)
-             };
-}
+/**
+ 配置里的字符串转换转换为枚举变量
 
-static NSNumber* PGSKServiceSupportedDataTypeStringToNSNumber(NSString* type){
-    return [PGSKServiceSupportedDataTypeStringToNSNumberDictionary() valueForKey:type];
-}
+ @return <#return value description#>
+ */
+//static NSDictionary* PGSKServiceSupportedDataTypeStringToNSNumberDictionary(){
+//    return @{
+//             kPKSGServiceSupportedTypeImage:@(PGSKServiceSupportedDataTypeImage),
+//             kPKSGServiceSupportedTypeWebpage:@(PGSKServiceSupportedDataTypeWebPage),
+//             kPKSGServiceSupportedTypeVideo:@(PGSKServiceSupportedDataTypeVideo)
+//             };
+//}
+//
+//static NSNumber* PGSKServiceSupportedDataTypeStringToNSNumber(NSString* type){
+//    return [PGSKServiceSupportedDataTypeStringToNSNumberDictionary() valueForKey:type];
+//}
 
 /**
  获取某个服务配置
@@ -93,6 +99,37 @@ UIImage* PGSKServiceInfoGetImageWithKey(NSString*key){
 
 
 /**
+ 用字典初始化对象时，有些数据类型需要进行转化
+
+ @param keypath 要解析json数据的路径
+ @param value json路径对应的值
+ @return 返回转换后的值
+ */
+static id PGSKServiceTransformBlock(NSString *keypath, id value){
+    assert(nil != keypath);
+    assert(nil != value);
+    PGSKGetDataBlock block = @{
+//             PGSKConfigDictionaryKeySlogan:^{
+//                 return [[[NSBundle mainBundle] pathForResource:PGSKConfigBundleName
+//                                                         ofType:nil]
+//                         stringByAppendingPathComponent:value];
+//             },
+             PGSKConfigDictionaryKeySupportedShareType:^{
+                 return @([value bk_reduceInteger:0
+                                        withBlock:^NSInteger(NSInteger result, id  _Nonnull obj) {
+                                            return (result | [@{
+                                                                kPKSGServiceSupportedTypeImage:@(PGSKServiceSupportedDataTypeImage),
+                                                                kPKSGServiceSupportedTypeWebpage:@(PGSKServiceSupportedDataTypeWebPage),
+                                                                kPKSGServiceSupportedTypeVideo:@(PGSKServiceSupportedDataTypeVideo)
+                                                                }[obj]
+                                                              integerValue]);
+                                        }]);
+             },
+             }[keypath];
+    return block ? block() : nil;
+}
+
+/**
  加载相机的分享顺序
 
  @return <#return value description#>
@@ -106,19 +143,7 @@ NSArray<id<PGSKServiceInfo>>* PGSKServiceInfoLoadCameraOrder(){
         tmpDict[PGSKConfigDictionaryKey] = obj;
         return [PGSKServiceInfoPOD instanceWithDictionary:tmpDict
                                                 transform:^id(NSString *keypath, id value) {
-                                                    PGSKGetDataBlock block = @{
-                                                                               PGSKConfigDictionaryKeySlogan:^{
-                                                                                   return [[[NSBundle mainBundle] pathForResource:PGSKConfigBundleName
-                                                                                                                           ofType:nil]
-                                                                                           stringByAppendingPathComponent:value];
-                                                                               },
-                                                                               PGSKConfigDictionaryKeySupportedShareType:^{
-                                                                                   return @([value bk_reduceInteger:0 withBlock:^NSInteger(NSInteger result, id  _Nonnull obj) {
-                                                                                       return (result | [PGSKServiceSupportedDataTypeStringToNSNumber(obj) integerValue]);
-                                                                                   }]);
-                                                                               },
-                                                                               }[keypath];
-                                                    return block ? block() : nil;
+                                                    return PGSKServiceTransformBlock(keypath, value);
                                                 }];
 
 //        [tmpDict[PGSKConfigDictionaryKeySupportedShareType] bk_each:^(id  _Nonnull obj) {
