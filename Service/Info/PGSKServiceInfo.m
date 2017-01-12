@@ -29,8 +29,8 @@ NSString *const kPKSGServiceSupportedTypeVideo = @"video";
 @property(nonatomic, strong) NSString* appKey;
 @property(nonatomic, strong) NSString* appSecret;
 @property(nonatomic, strong) NSString* redirectURL;
-@property(nonatomic, strong) UIImage* slogan;
-@property(nonatomic, assign) PGSKServiceSupportedDataType supportedShareType;
+@property(nonatomic, strong) UIImage* sloganURL;
+@property(nonatomic, assign) PGSKServiceSupportedDataType supportedShareTypes;
 //+ (instancetype)serviceInfoPODWithDictionary:(NSDictionary*)dict;
 @end
 
@@ -87,7 +87,8 @@ NSString* PGSKServiceInfoGetAppKeyWithKey(NSString*key){
  */
 UIImage* PGSKServiceInfoGetImageWithKey(NSString*key){
     assert(nil != key);
-    return [UIImage imageNamed:[PGSKConfigBundleName stringByAppendingPathComponent:key]];
+    return [UIImage imageNamed:[[NSBundle mainBundle] pathForResource:[PGSKConfigBundleName stringByAppendingPathComponent:key]
+                                                               ofType:@"png"]];
 }
 
 

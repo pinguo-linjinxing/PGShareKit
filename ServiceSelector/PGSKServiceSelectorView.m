@@ -30,14 +30,18 @@
     return self;
 }
 
-- (UICollectionView*)createCollectionView{
++ (UICollectionViewFlowLayout*)collectionViewFlowLayout{
     UICollectionViewFlowLayout *layout = [[UICollectionViewFlowLayout alloc] init];
     layout.scrollDirection = UICollectionViewScrollDirectionHorizontal;
     layout.itemSize = CGSizeMake(78, 100);
     layout.minimumInteritemSpacing = 12;
-    
+    return layout;
+}
+
+- (UICollectionView*)createCollectionView{
     UICollectionView* cv = [[UICollectionView alloc] initWithFrame:CGRectZero
-                                             collectionViewLayout:layout];
+                                             collectionViewLayout:[[self class] collectionViewFlowLayout]];
+    cv.backgroundColor = [UIColor whiteColor];
     [cv registerClass:[UICollectionViewCell class]  forCellWithReuseIdentifier:@"cell"];
     return cv;
 }
@@ -51,6 +55,8 @@
     [self.btnCancel addTarget:self
                        action:@selector(action:)
              forControlEvents:UIControlEventTouchUpInside];
+    [self addSubview:self.collectionView];
+    [self addSubview:self.btnCancel];
 }
 
 - (void)action:(id)sender{
@@ -73,8 +79,11 @@
 
 - (void)show{
     [self removeFromSuperview];
-    UIView* superView = [[UIApplication sharedApplication].windows firstObject];
+//    UIView* superView = [[UIApplication sharedApplication].windows firstObject];
+    UIView* superView = [[[[[UIApplication sharedApplication] delegate] window] rootViewController] view];
     [superView addSubview:self];
+    [self.collectionView reloadData];
+    [superView bringSubviewToFront:self];
 }
 
 - (void)dismiss{
@@ -96,17 +105,24 @@
     UIButton* btn = (UIButton*)[cell.contentView viewWithTag:1];
     if (nil == btn){
         btn = [UIButton buttonWithType:UIButtonTypeCustom];
+        [btn setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
         [btn centerVertically];
         [cell.contentView addSubview:btn];
         [btn addTarget:self
                            action:@selector(action:)
                  forControlEvents:UIControlEventTouchUpInside];
+        CGRect frame = btn.frame;
+        frame.size = [[self class] collectionViewFlowLayout].itemSize;
+        frame.size.width /= 2;
+        frame.size.height /= 2;
+        btn.frame = frame;
+        btn.tag = 1;
     }
     btn.tag = indexPath.item;
     if ([self.dataSource respondsToSelector:@selector(selector:serviceForIndex:)]) {
         id<PGSKServiceInfo> info = [self.dataSource selector:self serviceForIndex:indexPath.item];
         [btn setTitle:info.name forState:UIControlStateNormal];
-        [btn setImage:[UIImage imageWithContentsOfFile:info.sloganURL] forState:UIControlStateNormal];
+        [btn setImage:PGSKServiceInfoGetImageWithKey([info sloganURL]) forState:UIControlStateNormal];
     }
     return cell;
 }

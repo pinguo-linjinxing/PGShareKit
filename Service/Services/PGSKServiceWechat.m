@@ -10,4 +10,9 @@
 
 @implementation PGSKServiceWechat
 
+
++ (BOOL) canShare{
+    return YES;
+}
+
 @end

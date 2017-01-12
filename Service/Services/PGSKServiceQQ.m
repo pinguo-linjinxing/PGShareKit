@@ -81,6 +81,9 @@
     else return [QQApiInterface handleOpenURL:url delegate:self];
 }
 
++ (BOOL) canShare{
+    return YES;
+}
 
 @end
 

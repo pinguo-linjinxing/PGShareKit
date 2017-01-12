@@ -13,7 +13,7 @@ NSString* const PGSKConfigDictionaryKeyServices     = @"services";
 NSString* const PGSKConfigDictionaryKeyCameraOrder     = @"cameraOrder";
 NSString* const PGSKConfigDictionaryKeySlogan = @"slogan";
 NSString* const PGSKConfigDictionaryKey = @"key";
-NSString* const PGSKConfigDictionaryKeySupportedShareType = @"supportedShareType";
+NSString* const PGSKConfigDictionaryKeySupportedShareType = @"supportedShareTypes";
 
 NSString* const PGSKConfigBundleName = @"PGSNChannelSelector.bundle";
 //NSString* const PGSKConfigDictionaryKeyLanguage    = @"zh";

@@ -33,7 +33,7 @@ FOUNDATION_EXPORT NSString *const kPKSGServiceSupportedTypeVideo   ;
 @property(nonatomic, readonly, strong) NSString* appSecret;
 @property(nonatomic, readonly, strong) NSString* redirectURL;
 @property(nonatomic, readonly, strong) NSString* sloganURL;
-@property(nonatomic, readonly, assign) PGSKServiceSupportedDataType supportedShareType;
+@property(nonatomic, readonly, assign) PGSKServiceSupportedDataType supportedShareTypes;
 @end
 
 

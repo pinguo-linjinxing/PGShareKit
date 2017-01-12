@@ -12,7 +12,7 @@
 #import "PGSKServiceSelectorController.h"
 #import "PGSKShareData.h"
 #import "NSArray+BlocksKit.h"
-
+#import "PGSKServiceSelectorView.h"
 
 NSString *const kPKSGServiceDataDictKeyAuthor       = @"author";
 NSString *const kPKSGServiceDataDictKeyDescription  = @"description";
@@ -21,7 +21,7 @@ NSString *const kPKSGServiceDataDictKeyMessage      = @"message";
 NSString *const kPKSGServiceDataDictKeyThumbnail    = @"thumbnail";
 NSString *const kPKSGServiceDataDictKeyThumbnailURL = @"thumbnailURL";
 NSString *const kPKSGServiceDataDictKeyURL          = @"URL";
-NSString *const kPKSGServiceDataDictKeyDataType     = @"supportedShareType";
+NSString *const kPKSGServiceDataDictKeyDataType     = @"supportedShareTypes";
 
 
 NSString *const  PGShareKitErrorDomain = @"PGShareKitErrorDomain";
@@ -37,7 +37,8 @@ void PGShareKitBLLShare(PGShareKitBLLGetSharInfo getParamBlock,
                               PGSKFailBlock fail)
 //RACSignal* PGShareKitBLLShare(PGShareKitBLLGetSharInfo)
 {
-   [[[[[RACSignal createSignal:^RACDisposable *(id<RACSubscriber> subscriber) {
+   [[[[[[RACSignal createSignal:^RACDisposable *(id<RACSubscriber> subscriber) {
+       /* 从配置获取分享的社交平台 */
 //        PGSKServiceInfoLoadConfig(nil, ^(NSArray<id<PGSKServiceInfo>> *services) {
 //            [subscriber sendNext:services];
 //            [subscriber sendCompleted];
@@ -45,31 +46,38 @@ void PGShareKitBLLShare(PGShareKitBLLGetSharInfo getParamBlock,
 //            [subscriber sendError:error];
 //        });
         [subscriber sendNext:PGSKServiceInfoLoadCameraOrder()];
+        [subscriber sendCompleted];
         return nil;
     }] /* 过滤没安装的 */
        map:^id(NSArray<id<PGSKServiceInfo>> *services) {
        return [services bk_select:^BOOL(id<PGSKServiceInfo>  _Nonnull obj) {
            return PGShareKitServiceCanShare(obj);
        }];
-    }]
+    }]/* 让用户选择分享平台 */
      flattenMap:^RACStream *(NSArray<id<PGSKServiceInfo>> *services) {
       return [RACSignal createSignal:^RACDisposable *(id<RACSubscriber> subscriber) {
-            PGSKServiceSelectorController* con = [PGSKServiceSelectorController new];
+          static PGSKServiceSelectorController* con = nil;
+            con = [PGSKServiceSelectorController controllerWithselectorView:[PGSKServiceSelectorView new]
+                                                                    service:services];
             [con showWithSelectBlock:^(id<PGSKServiceInfo> service) {
                 [subscriber sendNext:service];
                 [subscriber sendCompleted];
+                con = nil;
             } cancelBlock:^(id sender) {
                 [subscriber sendError:PGShareKitReturnError()];
+                con = nil;
             }];
             return nil;
         }];
     }]
+      /* 获取分享的数据 */
      flattenMap:^RACStream *(id<PGSKServiceInfo> serviceInfo) {
          assert(nil != getParamBlock);
          return [[RACSignal createSignal:^RACDisposable *(id<RACSubscriber> subscriber) {
              getParamBlock(PGSKServiceSupportedDataTypeVideo,
-                           ^(NSDictionary* dict){
-                               [subscriber sendNext:PGShareKitCreateShareSignal(dict, serviceInfo)];
+                           ^(id param){
+                               [subscriber sendNext:RACTuplePack(param, serviceInfo)];
+                               [subscriber sendCompleted];
                            },
                            ^(NSError* error){
                                [subscriber sendError:error];
@@ -79,9 +87,15 @@ void PGShareKitBLLShare(PGShareKitBLLGetSharInfo getParamBlock,
          }]
                  flatten];
 
-    }] subscribeNext:^(id x) {
+    }]
+     /* 分享到社交平台 */
+     flattenMap:^RACStream *(RACTuple* tuple) {
+         return PGShareKitCreateShareSignal(tuple.first, tuple.second);
+    }]
+    subscribeNext:^(id x) {
         if (success) success(x);
-    } error:^(NSError *error) {
+    }
+    error:^(NSError *error) {
         if (fail) fail(error);
     }];
 }

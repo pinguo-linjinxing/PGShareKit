@@ -24,7 +24,7 @@ BOOL PGShareKitServiceCanShare(id<PGSKServiceInfo> serviceInfo){
               kPKSGServiceQQ:@([PGSKServiceQQ canShare]),
               kPKSGServiceWeiBo:@([PGSKServiceSinaWeibo canShare]),
               }
-            valueForKey:serviceInfo.name]
+            valueForKey:serviceInfo.key]
             boolValue];
 }
 

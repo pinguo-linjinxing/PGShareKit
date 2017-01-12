@@ -10,4 +10,8 @@
 
 @implementation PGSKServiceSinaWeibo
 
++ (BOOL) canShare{
+    return YES;
+}
+
 @end

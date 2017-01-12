@@ -9,17 +9,18 @@
 #import "PGSKServiceSelectorController.h"
 
 @interface PGSKServiceSelectorController()
-@property(strong) NSArray<PGSKServiceInfo>* service;
+@property(strong) NSArray<id<PGSKServiceInfo>>* services;
 @property(strong) id<PGSKServiceSelector> selectorView;
 @property(copy) PGSKSelectServiceBlock selectBlock;
 @property(copy) PGSKCanelBlock cancelBlock;
 @end
 
 @implementation PGSKServiceSelectorController
-+ (instancetype)serviceSelectorControllerWithselectorView:(id<PGSKServiceSelector>) selectorView
-                                                  service:(NSArray<PGSKServiceInfo>*)service{
++ (instancetype)controllerWithselectorView:(id<PGSKServiceSelector>) selectorView
+                                                  service:(NSArray<id<PGSKServiceInfo>>*)services{
     PGSKServiceSelectorController* controller = [[self alloc] init];
     controller.selectorView = selectorView;
+    controller.services = services;
     selectorView.dataSource = controller;
     selectorView.delegate = controller;
     return controller;
@@ -32,11 +33,11 @@
 }
 
 - (NSInteger)numberOfRowsInSelector:(id<PGSKServiceSelector>)selector{
-    return [self.service count];
+    return [self.services count];
 }
 
 - (id<PGSKServiceInfo>)selector:(id<PGSKServiceSelector>)selector serviceForIndex:(NSUInteger)index{
-    return self.service[index];
+    return self.services[index];
 }
 
 - (void)selectorDidCancel:(id<PGSKServiceSelector>)selector{
@@ -47,7 +48,7 @@
 }
 - (void)selector:(id<PGSKServiceSelector>)selector didSelectIndex:(NSUInteger)index{
     if (self.selectBlock) {
-        self.selectBlock(self.service[index]);
+        self.selectBlock(self.services[index]);
     }
     [selector dismiss];
 }

@@ -2,33 +2,38 @@
     "version": "1.0",
     "services": {
                  "wechat":{
+                     "name":"微信好友",
                      "appKey":"wx9eb0c14967cc1036",
                      "appSecret":"2a9b1510924ee1216641afb61e0b80c0",
-                     "slogan":"wx",
-                     "supportedShareType":["image", "webpage"]
+                     "sloganURL":"wx",
+                     "supportedShareTypes":["image", "webpage"]
                  },
                  "wechatMoments":{
+                     "name":"微信朋友圈",
                      "appKey":"wx9eb0c14967cc1036",
                      "appSecret":"2a9b1510924ee1216641afb61e0b80c0",
-                     "slogan":"pyq",
-                     "supportedShareType":["image", "webpage"]
+                     "sloganURL":"pyq",
+                     "supportedShareTypes":["image", "webpage"]
                  },
                  "sina":{
+                     "name":"微博",
                      "appKey":"3555837032",
                      "appSecret":"31926fa05dc1fc58e89ce0f15e8cfa86",
-                     "slogan":"sina",
+                     "sloganURL":"wb",
                      "redirectURL":"http://hsnkit.com/weibo/callback",
-                     "supportedShareType":["image", "webpage"]
+                     "supportedShareTypes":["image", "webpage"]
                  },
                  "qqzone":{
+                     "name":"QQ空间",
                      "appKey":"100303003",
-                     "slogan":"qqzone",
-                     "supportedShareType":["image", "webpage"]
+                     "sloganURL":"qqzone",
+                     "supportedShareTypes":["image", "webpage"]
                  },
                  "qq":{
+                     "name":"QQ",
                      "appKey":"QQ05FA809B",
-                     "slogan":"qq",
-                     "supportedShareType":["image", "webpage"]
+                     "sloganURL":"qq",
+                     "supportedShareTypes":["image", "webpage"]
                  }
                  
     },
