@@ -12,7 +12,7 @@
 typedef void(^PGSKConfigLoadCopyWritingSuccess)(NSString* title, NSString* message);
 
 /**
- 加载方案配置
+ 加载文案配置
 
  @param param <#param description#>
  @param success <#success description#>

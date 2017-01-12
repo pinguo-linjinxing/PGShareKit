@@ -11,6 +11,7 @@
 #import "PGSKTypes.h"
 
 FOUNDATION_EXPORT NSString *const kPKSGServiceWechat ;
+FOUNDATION_EXPORT NSString *const kPKSGServiceWechatMoments;
 FOUNDATION_EXPORT NSString *const kPKSGServiceQQ ;
 FOUNDATION_EXPORT NSString *const kPKSGServiceWeiBo ;
 FOUNDATION_EXPORT NSString *const kPKSGServiceQQZone;
@@ -32,7 +33,7 @@ FOUNDATION_EXPORT NSString *const kPKSGServiceSupportedTypeVideo   ;
 @property(nonatomic, readonly, strong) NSString* appKey;
 @property(nonatomic, readonly, strong) NSString* appSecret;
 @property(nonatomic, readonly, strong) NSString* redirectURL;
-@property(nonatomic, readonly, strong) NSString* sloganURL;
+@property(nonatomic, readonly, strong) NSString* sloganImageName;
 @property(nonatomic, readonly, assign) PGSKServiceSupportedDataType supportedShareTypes;
 @end
 

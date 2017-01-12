@@ -122,7 +122,7 @@
     if ([self.dataSource respondsToSelector:@selector(selector:serviceForIndex:)]) {
         id<PGSKServiceInfo> info = [self.dataSource selector:self serviceForIndex:indexPath.item];
         [btn setTitle:info.name forState:UIControlStateNormal];
-        [btn setImage:PGSKServiceInfoGetImageWithKey([info sloganURL]) forState:UIControlStateNormal];
+        [btn setImage:PGSKServiceInfoGetImageWithKey([info sloganImageName]) forState:UIControlStateNormal];
     }
     return cell;
 }

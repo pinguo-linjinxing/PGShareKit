@@ -19,16 +19,15 @@
 		682864491E1599D800D56F43 /* PGSKServiceSelectorView.m in Sources */ = {isa = PBXBuildFile; fileRef = 682864481E1599D800D56F43 /* PGSKServiceSelectorView.m */; };
 		6828644C1E159BD500D56F43 /* PGSKServiceSelectorController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6828644B1E159BD500D56F43 /* PGSKServiceSelectorController.m */; };
 		682864611E15B39400D56F43 /* PGShareKitBLL.m in Sources */ = {isa = PBXBuildFile; fileRef = 682864601E15B39400D56F43 /* PGShareKitBLL.m */; };
-		684C06B81E24C9E100BAB9E9 /* NSObject+Init.m in Sources */ = {isa = PBXBuildFile; fileRef = 684C06B71E24C9E100BAB9E9 /* NSObject+Init.m */; };
 		68637A2B1E20B2E400082820 /* PGSKConfig.json in Resources */ = {isa = PBXBuildFile; fileRef = 68637A2A1E20B2E400082820 /* PGSKConfig.json */; };
 		68637A2E1E20B31400082820 /* PGSKConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = 68637A2D1E20B31400082820 /* PGSKConfig.m */; };
 		68637A311E211F1000082820 /* PGSKServiceSinaWeibo.m in Sources */ = {isa = PBXBuildFile; fileRef = 68637A301E211F1000082820 /* PGSKServiceSinaWeibo.m */; };
-		68637A391E21238000082820 /* NSArray+BlocksKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 68637A351E21238000082820 /* NSArray+BlocksKit.m */; };
-		68637A3A1E21238000082820 /* NSDictionary+BlocksKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 68637A381E21238000082820 /* NSDictionary+BlocksKit.m */; };
 		68637A3C1E23186200082820 /* PGSNChannelSelector.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 68637A3B1E23186200082820 /* PGSNChannelSelector.bundle */; };
-		686D81601E260B8F00E592F4 /* UIButton+Layout.m in Sources */ = {isa = PBXBuildFile; fileRef = 686D815F1E260B8F00E592F4 /* UIButton+Layout.m */; };
-		686D81721E272F9A00E592F4 /* NSObject+Properties.m in Sources */ = {isa = PBXBuildFile; fileRef = 686D81711E272F9A00E592F4 /* NSObject+Properties.m */; };
-		68C4E8921E171FC700F3A144 /* PGShareKitDictionaryKey.m in Sources */ = {isa = PBXBuildFile; fileRef = 68C4E8911E171FC700F3A144 /* PGShareKitDictionaryKey.m */; };
+		686D81911E2769F800E592F4 /* NSArray+BlocksKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 686D81841E2769F800E592F4 /* NSArray+BlocksKit.m */; };
+		686D81921E2769F800E592F4 /* NSDictionary+BlocksKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 686D81871E2769F800E592F4 /* NSDictionary+BlocksKit.m */; };
+		686D81931E2769F800E592F4 /* NSObject+Init.m in Sources */ = {isa = PBXBuildFile; fileRef = 686D818A1E2769F800E592F4 /* NSObject+Init.m */; };
+		686D81941E2769F800E592F4 /* PGShareKitDictionaryKey.m in Sources */ = {isa = PBXBuildFile; fileRef = 686D818C1E2769F800E592F4 /* PGShareKitDictionaryKey.m */; };
+		686D81951E2769F800E592F4 /* UIButton+Layout.m in Sources */ = {isa = PBXBuildFile; fileRef = 686D81901E2769F800E592F4 /* UIButton+Layout.m */; };
 		68C4E8A01E1BCBE300F3A144 /* PGSKCopyWritingFormat.m in Sources */ = {isa = PBXBuildFile; fileRef = 68C4E89F1E1BCBE300F3A144 /* PGSKCopyWritingFormat.m */; };
 		68C4E8B51E1BCCBA00F3A144 /* PGSKServiceInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 68C4E8A81E1BCCBA00F3A144 /* PGSKServiceInfo.m */; };
 		68C4E8B71E1BCCBA00F3A144 /* PGSKShareData.m in Sources */ = {isa = PBXBuildFile; fileRef = 68C4E8AD1E1BCCBA00F3A144 /* PGSKShareData.m */; };
@@ -78,29 +77,28 @@
 		6828644A1E159BD500D56F43 /* PGSKServiceSelectorController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PGSKServiceSelectorController.h; sourceTree = "<group>"; };
 		6828644B1E159BD500D56F43 /* PGSKServiceSelectorController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PGSKServiceSelectorController.m; sourceTree = "<group>"; };
 		6828644D1E15A03400D56F43 /* PGSKServiceSelector.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PGSKServiceSelector.h; sourceTree = "<group>"; };
-		682864501E15A29500D56F43 /* PGSKTypes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PGSKTypes.h; sourceTree = "<group>"; };
 		6828645F1E15B39400D56F43 /* PGShareKitBLL.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PGShareKitBLL.h; sourceTree = "<group>"; };
 		682864601E15B39400D56F43 /* PGShareKitBLL.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PGShareKitBLL.m; sourceTree = "<group>"; };
 		683D5CE41E1D0C630003F401 /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ViewController.h; path = PGShareKit/ViewController.h; sourceTree = "<group>"; };
-		684C06B61E24C9E100BAB9E9 /* NSObject+Init.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+Init.h"; sourceTree = "<group>"; };
-		684C06B71E24C9E100BAB9E9 /* NSObject+Init.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+Init.m"; sourceTree = "<group>"; };
 		68637A2A1E20B2E400082820 /* PGSKConfig.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = PGSKConfig.json; sourceTree = "<group>"; };
 		68637A2C1E20B31400082820 /* PGSKConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PGSKConfig.h; sourceTree = "<group>"; };
 		68637A2D1E20B31400082820 /* PGSKConfig.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PGSKConfig.m; sourceTree = "<group>"; };
 		68637A2F1E211F1000082820 /* PGSKServiceSinaWeibo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PGSKServiceSinaWeibo.h; sourceTree = "<group>"; };
 		68637A301E211F1000082820 /* PGSKServiceSinaWeibo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PGSKServiceSinaWeibo.m; sourceTree = "<group>"; };
-		68637A331E21238000082820 /* BKDefines.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BKDefines.h; sourceTree = "<group>"; };
-		68637A341E21238000082820 /* NSArray+BlocksKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+BlocksKit.h"; sourceTree = "<group>"; };
-		68637A351E21238000082820 /* NSArray+BlocksKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+BlocksKit.m"; sourceTree = "<group>"; };
-		68637A371E21238000082820 /* NSDictionary+BlocksKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+BlocksKit.h"; sourceTree = "<group>"; };
-		68637A381E21238000082820 /* NSDictionary+BlocksKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+BlocksKit.m"; sourceTree = "<group>"; };
 		68637A3B1E23186200082820 /* PGSNChannelSelector.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = PGSNChannelSelector.bundle; sourceTree = "<group>"; };
-		686D815E1E260B8F00E592F4 /* UIButton+Layout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIButton+Layout.h"; sourceTree = "<group>"; };
-		686D815F1E260B8F00E592F4 /* UIButton+Layout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIButton+Layout.m"; sourceTree = "<group>"; };
-		686D81701E272F9A00E592F4 /* NSObject+Properties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+Properties.h"; sourceTree = "<group>"; };
-		686D81711E272F9A00E592F4 /* NSObject+Properties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+Properties.m"; sourceTree = "<group>"; };
-		68C4E8901E171FC700F3A144 /* PGShareKitDictionaryKey.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PGShareKitDictionaryKey.h; sourceTree = "<group>"; };
-		68C4E8911E171FC700F3A144 /* PGShareKitDictionaryKey.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PGShareKitDictionaryKey.m; sourceTree = "<group>"; };
+		686D81801E2769F800E592F4 /* BlocksDefines.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BlocksDefines.h; sourceTree = "<group>"; };
+		686D81821E2769F800E592F4 /* BKDefines.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BKDefines.h; sourceTree = "<group>"; };
+		686D81831E2769F800E592F4 /* NSArray+BlocksKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+BlocksKit.h"; sourceTree = "<group>"; };
+		686D81841E2769F800E592F4 /* NSArray+BlocksKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+BlocksKit.m"; sourceTree = "<group>"; };
+		686D81861E2769F800E592F4 /* NSDictionary+BlocksKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+BlocksKit.h"; sourceTree = "<group>"; };
+		686D81871E2769F800E592F4 /* NSDictionary+BlocksKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+BlocksKit.m"; sourceTree = "<group>"; };
+		686D81891E2769F800E592F4 /* NSObject+Init.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+Init.h"; sourceTree = "<group>"; };
+		686D818A1E2769F800E592F4 /* NSObject+Init.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+Init.m"; sourceTree = "<group>"; };
+		686D818B1E2769F800E592F4 /* PGShareKitDictionaryKey.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PGShareKitDictionaryKey.h; sourceTree = "<group>"; };
+		686D818C1E2769F800E592F4 /* PGShareKitDictionaryKey.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PGShareKitDictionaryKey.m; sourceTree = "<group>"; };
+		686D818D1E2769F800E592F4 /* PGSKTypes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PGSKTypes.h; sourceTree = "<group>"; };
+		686D818F1E2769F800E592F4 /* UIButton+Layout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIButton+Layout.h"; sourceTree = "<group>"; };
+		686D81901E2769F800E592F4 /* UIButton+Layout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIButton+Layout.m"; sourceTree = "<group>"; };
 		68C4E89E1E1BCBE300F3A144 /* PGSKCopyWritingFormat.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PGSKCopyWritingFormat.h; sourceTree = "<group>"; };
 		68C4E89F1E1BCBE300F3A144 /* PGSKCopyWritingFormat.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PGSKCopyWritingFormat.m; sourceTree = "<group>"; };
 		68C4E8A71E1BCCBA00F3A144 /* PGSKServiceInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PGSKServiceInfo.h; sourceTree = "<group>"; };
@@ -157,7 +155,7 @@
 		682863F81E153B1000D56F43 = {
 			isa = PBXGroup;
 			children = (
-				6828644E1E15A0CE00D56F43 /* Foundation */,
+				686D817F1E2769F800E592F4 /* Foundation */,
 				6828645E1E15B37900D56F43 /* BLL */,
 				68C4E8A51E1BCCBA00F3A144 /* Service */,
 				68C4E89D1E1BCBE300F3A144 /* CopyWriting */,
@@ -247,20 +245,6 @@
 			path = ServiceSelector;
 			sourceTree = "<group>";
 		};
-		6828644E1E15A0CE00D56F43 /* Foundation */ = {
-			isa = PBXGroup;
-			children = (
-				686D815D1E260B8400E592F4 /* UIButton */,
-				683F83781E24B51C00D9DD96 /* NSObject */,
-				68637A321E21238000082820 /* NSArray */,
-				68637A361E21238000082820 /* NSDictionary */,
-				682864501E15A29500D56F43 /* PGSKTypes.h */,
-				68C4E8901E171FC700F3A144 /* PGShareKitDictionaryKey.h */,
-				68C4E8911E171FC700F3A144 /* PGShareKitDictionaryKey.m */,
-			);
-			path = Foundation;
-			sourceTree = "<group>";
-		};
 		6828645E1E15B37900D56F43 /* BLL */ = {
 			isa = PBXGroup;
 			children = (
@@ -268,18 +252,6 @@
 				682864601E15B39400D56F43 /* PGShareKitBLL.m */,
 			);
 			path = BLL;
-			sourceTree = "<group>";
-		};
-		683F83781E24B51C00D9DD96 /* NSObject */ = {
-			isa = PBXGroup;
-			children = (
-				686D81701E272F9A00E592F4 /* NSObject+Properties.h */,
-				686D81711E272F9A00E592F4 /* NSObject+Properties.m */,
-				684C06B61E24C9E100BAB9E9 /* NSObject+Init.h */,
-				684C06B71E24C9E100BAB9E9 /* NSObject+Init.m */,
-			);
-			name = NSObject;
-			path = "../../ios-newcamera360/Modules/SNS/Classes/公共/扩展/基础/NSObject";
 			sourceTree = "<group>";
 		};
 		68637A291E20B2E400082820 /* Config */ = {
@@ -292,35 +264,56 @@
 			path = Config;
 			sourceTree = "<group>";
 		};
-		68637A321E21238000082820 /* NSArray */ = {
+		686D817F1E2769F800E592F4 /* Foundation */ = {
 			isa = PBXGroup;
 			children = (
-				68637A331E21238000082820 /* BKDefines.h */,
-				68637A341E21238000082820 /* NSArray+BlocksKit.h */,
-				68637A351E21238000082820 /* NSArray+BlocksKit.m */,
+				686D81801E2769F800E592F4 /* BlocksDefines.h */,
+				686D81811E2769F800E592F4 /* NSArray */,
+				686D81851E2769F800E592F4 /* NSDictionary */,
+				686D81881E2769F800E592F4 /* NSObject */,
+				686D818B1E2769F800E592F4 /* PGShareKitDictionaryKey.h */,
+				686D818C1E2769F800E592F4 /* PGShareKitDictionaryKey.m */,
+				686D818D1E2769F800E592F4 /* PGSKTypes.h */,
+				686D818E1E2769F800E592F4 /* UIButton */,
 			);
-			name = NSArray;
-			path = "../../ios-newcamera360/Modules/SNS/Classes/公共/扩展/基础/NSArray";
+			path = Foundation;
 			sourceTree = "<group>";
 		};
-		68637A361E21238000082820 /* NSDictionary */ = {
+		686D81811E2769F800E592F4 /* NSArray */ = {
 			isa = PBXGroup;
 			children = (
-				68637A371E21238000082820 /* NSDictionary+BlocksKit.h */,
-				68637A381E21238000082820 /* NSDictionary+BlocksKit.m */,
+				686D81821E2769F800E592F4 /* BKDefines.h */,
+				686D81831E2769F800E592F4 /* NSArray+BlocksKit.h */,
+				686D81841E2769F800E592F4 /* NSArray+BlocksKit.m */,
 			);
-			name = NSDictionary;
-			path = "../../ios-newcamera360/Modules/SNS/Classes/公共/扩展/基础/NSDictionary";
+			path = NSArray;
 			sourceTree = "<group>";
 		};
-		686D815D1E260B8400E592F4 /* UIButton */ = {
+		686D81851E2769F800E592F4 /* NSDictionary */ = {
 			isa = PBXGroup;
 			children = (
-				686D815E1E260B8F00E592F4 /* UIButton+Layout.h */,
-				686D815F1E260B8F00E592F4 /* UIButton+Layout.m */,
+				686D81861E2769F800E592F4 /* NSDictionary+BlocksKit.h */,
+				686D81871E2769F800E592F4 /* NSDictionary+BlocksKit.m */,
 			);
-			name = UIButton;
-			path = "../../ios-newcamera360/Modules/SNS/Classes/公共/扩展/基础/UIButton";
+			path = NSDictionary;
+			sourceTree = "<group>";
+		};
+		686D81881E2769F800E592F4 /* NSObject */ = {
+			isa = PBXGroup;
+			children = (
+				686D81891E2769F800E592F4 /* NSObject+Init.h */,
+				686D818A1E2769F800E592F4 /* NSObject+Init.m */,
+			);
+			path = NSObject;
+			sourceTree = "<group>";
+		};
+		686D818E1E2769F800E592F4 /* UIButton */ = {
+			isa = PBXGroup;
+			children = (
+				686D818F1E2769F800E592F4 /* UIButton+Layout.h */,
+				686D81901E2769F800E592F4 /* UIButton+Layout.m */,
+			);
+			path = UIButton;
 			sourceTree = "<group>";
 		};
 		68C4E89D1E1BCBE300F3A144 /* CopyWriting */ = {
@@ -564,21 +557,20 @@
 				68C4E8B51E1BCCBA00F3A144 /* PGSKServiceInfo.m in Sources */,
 				68C4E8BA1E1BCCBA00F3A144 /* PGSKServiceWechat.m in Sources */,
 				682864611E15B39400D56F43 /* PGShareKitBLL.m in Sources */,
+				686D81941E2769F800E592F4 /* PGShareKitDictionaryKey.m in Sources */,
 				682864491E1599D800D56F43 /* PGSKServiceSelectorView.m in Sources */,
 				68637A2E1E20B31400082820 /* PGSKConfig.m in Sources */,
-				68637A391E21238000082820 /* NSArray+BlocksKit.m in Sources */,
 				6828640C1E153B1000D56F43 /* ViewController.m in Sources */,
-				684C06B81E24C9E100BAB9E9 /* NSObject+Init.m in Sources */,
-				686D81601E260B8F00E592F4 /* UIButton+Layout.m in Sources */,
+				686D81911E2769F800E592F4 /* NSArray+BlocksKit.m in Sources */,
+				686D81951E2769F800E592F4 /* UIButton+Layout.m in Sources */,
 				68C4E8B91E1BCCBA00F3A144 /* PGSKServiceQQ.m in Sources */,
 				68637A311E211F1000082820 /* PGSKServiceSinaWeibo.m in Sources */,
 				682864091E153B1000D56F43 /* AppDelegate.m in Sources */,
-				686D81721E272F9A00E592F4 /* NSObject+Properties.m in Sources */,
 				68C4E8B81E1BCCBA00F3A144 /* PGSKService.m in Sources */,
-				68C4E8921E171FC700F3A144 /* PGShareKitDictionaryKey.m in Sources */,
+				686D81921E2769F800E592F4 /* NSDictionary+BlocksKit.m in Sources */,
 				6828644C1E159BD500D56F43 /* PGSKServiceSelectorController.m in Sources */,
+				686D81931E2769F800E592F4 /* NSObject+Init.m in Sources */,
 				68C4E8B71E1BCCBA00F3A144 /* PGSKShareData.m in Sources */,
-				68637A3A1E21238000082820 /* NSDictionary+BlocksKit.m in Sources */,
 				68C4E8A01E1BCBE300F3A144 /* PGSKCopyWritingFormat.m in Sources */,
 				682864061E153B1000D56F43 /* main.m in Sources */,
 			);

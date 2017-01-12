@@ -12,11 +12,13 @@
 #import "PGSKServiceSinaWeibo.h"
 
 NSObject<PGSKService>* PGShareKitCreateService(id<PGSKServiceInfo> serviceInfo){
-    return [@{kPKSGServiceWechat:[PGSKServiceWechat class],
+    return [[[@{kPKSGServiceWechat:[PGSKServiceWechat class],
               kPKSGServiceQQ:[PGSKServiceQQ class],
               kPKSGServiceWeiBo:[PGSKServiceSinaWeibo class],
               }
-            valueForKey:serviceInfo.name];
+              valueForKey:serviceInfo.key]
+             alloc]
+            init];
 }
 
 BOOL PGShareKitServiceCanShare(id<PGSKServiceInfo> serviceInfo){

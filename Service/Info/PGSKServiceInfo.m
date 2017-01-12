@@ -13,7 +13,8 @@
 #import "NSDictionary+BlocksKit.h"
 
 NSString *const kPKSGServiceWechat = @"wechat";
-NSString *const kPKSGServiceQQ = @"wechatMoments";
+NSString *const kPKSGServiceWechatMoments = @"wechatMoments";
+NSString *const kPKSGServiceQQ = @"qq";
 NSString *const kPKSGServiceWeiBo = @"sina";
 NSString *const kPKSGServiceQQZone = @"qqzone";
 NSString *const kPKSGServiceInstagram = @"instagram";
@@ -29,11 +30,10 @@ NSString *const kPKSGServiceSupportedTypeVideo = @"video";
 @property(nonatomic, strong) NSString* appKey;
 @property(nonatomic, strong) NSString* appSecret;
 @property(nonatomic, strong) NSString* redirectURL;
-@property(nonatomic, strong) UIImage* sloganURL;
+@property(nonatomic, strong) NSString* sloganImageName;
 @property(nonatomic, assign) PGSKServiceSupportedDataType supportedShareTypes;
 //+ (instancetype)serviceInfoPODWithDictionary:(NSDictionary*)dict;
 @end
-
 
 
 @implementation PGSKServiceInfoPOD
