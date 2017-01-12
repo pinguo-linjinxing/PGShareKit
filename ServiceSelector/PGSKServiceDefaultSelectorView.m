@@ -6,10 +6,10 @@
 //  Copyright © 2016年 linjinxing. All rights reserved.
 //
 
-#import "PGSKServiceSelectorView.h"
+#import "PGSKServiceDefaultSelectorView.h"
 #import "UIButton+Layout.h"
 
-@interface PGSKServiceSelectorView()<UICollectionViewDataSource>
+@interface PGSKServiceDefaultSelectorView()<UICollectionViewDataSource>
 @property(nonatomic, strong) UICollectionView* collectionView;
 @property(nonatomic, strong) UIButton* btnCancel;
 @end
@@ -18,7 +18,7 @@
 #define CollectionViewHeight 120
 #define ButtonHeight 80
 
-@implementation PGSKServiceSelectorView
+@implementation PGSKServiceDefaultSelectorView
 @synthesize dataSource, delegate;
 
 -(instancetype)init{
@@ -53,7 +53,7 @@
     self.btnCancel = [UIButton buttonWithType:UIButtonTypeSystem];
     [self.btnCancel setTitle:@"取消" forState:UIControlStateNormal];
     [self.btnCancel addTarget:self
-                       action:@selector(action:)
+                       action:@selector(cancelAction:)
              forControlEvents:UIControlEventTouchUpInside];
     [self addSubview:self.collectionView];
     [self addSubview:self.btnCancel];

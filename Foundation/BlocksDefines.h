@@ -7,6 +7,7 @@
 //
 #import <Foundation/Foundation.h>
 
+typedef void(^PGSKVoidBlock)();
 typedef void(^PGSKDataBlock)(id data);
 typedef PGSKDataBlock PGSKSuccessBlock;
 typedef void(^PGSKFailBlock)(NSError* error);

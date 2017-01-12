@@ -16,7 +16,7 @@
 		6828641F1E153B1000D56F43 /* PGShareKitTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6828641E1E153B1000D56F43 /* PGShareKitTests.m */; };
 		6828642A1E153B1100D56F43 /* PGShareKitUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 682864291E153B1100D56F43 /* PGShareKitUITests.m */; };
 		682864391E15965C00D56F43 /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 682864381E15965C00D56F43 /* Social.framework */; };
-		682864491E1599D800D56F43 /* PGSKServiceSelectorView.m in Sources */ = {isa = PBXBuildFile; fileRef = 682864481E1599D800D56F43 /* PGSKServiceSelectorView.m */; };
+		682864491E1599D800D56F43 /* PGSKServiceDefaultSelectorView.m in Sources */ = {isa = PBXBuildFile; fileRef = 682864481E1599D800D56F43 /* PGSKServiceDefaultSelectorView.m */; };
 		6828644C1E159BD500D56F43 /* PGSKServiceSelectorController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6828644B1E159BD500D56F43 /* PGSKServiceSelectorController.m */; };
 		682864611E15B39400D56F43 /* PGShareKitBLL.m in Sources */ = {isa = PBXBuildFile; fileRef = 682864601E15B39400D56F43 /* PGShareKitBLL.m */; };
 		68637A2B1E20B2E400082820 /* PGSKConfig.json in Resources */ = {isa = PBXBuildFile; fileRef = 68637A2A1E20B2E400082820 /* PGSKConfig.json */; };
@@ -72,8 +72,8 @@
 		682864291E153B1100D56F43 /* PGShareKitUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PGShareKitUITests.m; sourceTree = "<group>"; };
 		6828642B1E153B1100D56F43 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		682864381E15965C00D56F43 /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
-		682864471E1599D800D56F43 /* PGSKServiceSelectorView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PGSKServiceSelectorView.h; sourceTree = "<group>"; };
-		682864481E1599D800D56F43 /* PGSKServiceSelectorView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PGSKServiceSelectorView.m; sourceTree = "<group>"; };
+		682864471E1599D800D56F43 /* PGSKServiceDefaultSelectorView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PGSKServiceDefaultSelectorView.h; sourceTree = "<group>"; };
+		682864481E1599D800D56F43 /* PGSKServiceDefaultSelectorView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PGSKServiceDefaultSelectorView.m; sourceTree = "<group>"; };
 		6828644A1E159BD500D56F43 /* PGSKServiceSelectorController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PGSKServiceSelectorController.h; sourceTree = "<group>"; };
 		6828644B1E159BD500D56F43 /* PGSKServiceSelectorController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PGSKServiceSelectorController.m; sourceTree = "<group>"; };
 		6828644D1E15A03400D56F43 /* PGSKServiceSelector.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PGSKServiceSelector.h; sourceTree = "<group>"; };
@@ -237,8 +237,8 @@
 			isa = PBXGroup;
 			children = (
 				6828644D1E15A03400D56F43 /* PGSKServiceSelector.h */,
-				682864471E1599D800D56F43 /* PGSKServiceSelectorView.h */,
-				682864481E1599D800D56F43 /* PGSKServiceSelectorView.m */,
+				682864471E1599D800D56F43 /* PGSKServiceDefaultSelectorView.h */,
+				682864481E1599D800D56F43 /* PGSKServiceDefaultSelectorView.m */,
 				6828644A1E159BD500D56F43 /* PGSKServiceSelectorController.h */,
 				6828644B1E159BD500D56F43 /* PGSKServiceSelectorController.m */,
 			);
@@ -558,7 +558,7 @@
 				68C4E8BA1E1BCCBA00F3A144 /* PGSKServiceWechat.m in Sources */,
 				682864611E15B39400D56F43 /* PGShareKitBLL.m in Sources */,
 				686D81941E2769F800E592F4 /* PGShareKitDictionaryKey.m in Sources */,
-				682864491E1599D800D56F43 /* PGSKServiceSelectorView.m in Sources */,
+				682864491E1599D800D56F43 /* PGSKServiceDefaultSelectorView.m in Sources */,
 				68637A2E1E20B31400082820 /* PGSKConfig.m in Sources */,
 				6828640C1E153B1000D56F43 /* ViewController.m in Sources */,
 				686D81911E2769F800E592F4 /* NSArray+BlocksKit.m in Sources */,

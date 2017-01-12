@@ -12,7 +12,7 @@
 #import "PGSKServiceSelectorController.h"
 #import "PGSKShareData.h"
 #import "NSArray+BlocksKit.h"
-#import "PGSKServiceSelectorView.h"
+#import "PGSKServiceDefaultSelectorView.h"
 
 NSString *const kPKSGServiceDataDictKeyAuthor       = @"author";
 NSString *const kPKSGServiceDataDictKeyDescription  = @"description";
@@ -29,63 +29,34 @@ NSString *const  PGShareKitErrorDomain = @"PGShareKitErrorDomain";
 static inline NSError* PGShareKitReturnError(){
     return [NSError errorWithDomain:PGShareKitErrorDomain code:-1 userInfo:@{NSLocalizedDescriptionKey:@"用户取消分享"}];
 }
-static RACSignal* PGShareKitCreateShareSignal(id data, id<PGSKServiceInfo> serviceInfo, PGSKServiceSupportedDataType type);
 
+static RACSignal* PGShareKitLoadConfigSignal();
+static RACSignal* PGShareKitCreateShareSignal(id data,
+                                              id<PGSKServiceInfo> serviceInfo,
+                                              PGSKServiceSupportedDataType type);
+static RACSignal* PGShareKitCreateShareSelectorSignal(NSArray<id<PGSKServiceInfo>> *services);
+static RACSignal* PGShareKitCreateShareDataSignal(PGShareKitBLLGetSharInfo getParamBlock,
+                                            NSObject<PGSKServiceInfo>* serviceInfo);
 
 void PGShareKitBLLShare(PGShareKitBLLGetSharInfo getParamBlock,
                               PGSKSuccessBlock success,
                               PGSKFailBlock fail)
 //RACSignal* PGShareKitBLLShare(PGShareKitBLLGetSharInfo)
 {
-   [[[[[[RACSignal createSignal:^RACDisposable *(id<RACSubscriber> subscriber) {
-       /* 从配置获取分享的社交平台 */
-//        PGSKServiceInfoLoadConfig(nil, ^(NSArray<id<PGSKServiceInfo>> *services) {
-//            [subscriber sendNext:services];
-//            [subscriber sendCompleted];
-//        }, ^(NSError *error) {
-//            [subscriber sendError:error];
-//        });
-        [subscriber sendNext:PGSKServiceInfoLoadCameraOrder()];
-        [subscriber sendCompleted];
-        return nil;
-    }] /* 过滤没安装的 */
-       map:^id(NSArray<id<PGSKServiceInfo>> *services) {
+   [[[[/* 加载配置数据 */
+       [PGShareKitLoadConfigSignal()
+       /* 过滤没安装的 */
+        map:^id(NSArray<id<PGSKServiceInfo>> *services) {
        return [services bk_select:^BOOL(id<PGSKServiceInfo>  _Nonnull obj) {
            return PGShareKitServiceCanShare(obj);
        }];
     }]/* 让用户选择分享平台 */
      flattenMap:^RACStream *(NSArray<id<PGSKServiceInfo>> *services) {
-      return [RACSignal createSignal:^RACDisposable *(id<RACSubscriber> subscriber) {
-          static PGSKServiceSelectorController* con = nil;
-            con = [PGSKServiceSelectorController controllerWithselectorView:[PGSKServiceSelectorView new]
-                                                                    service:services];
-            [con showWithSelectBlock:^(id<PGSKServiceInfo> service) {
-                [subscriber sendNext:service];
-                [subscriber sendCompleted];
-                con = nil;
-            } cancelBlock:^(id sender) {
-                [subscriber sendError:PGShareKitReturnError()];
-                con = nil;
-            }];
-            return nil;
-        }];
+         return PGShareKitCreateShareSelectorSignal(services);
     }]
       /* 获取分享的参数数据 */
      flattenMap:^RACStream *(NSObject<PGSKServiceInfo>* serviceInfo) {
-         assert(nil != getParamBlock);
-         return [RACSignal createSignal:^RACDisposable *(id<RACSubscriber> subscriber) {
-             PGSKServiceSupportedDataType type = PGSKServiceSupportedDataTypeImage;
-             getParamBlock(type,
-                           ^(id param){
-                               [subscriber sendNext:RACTuplePack(param, serviceInfo, @(type))];
-                               [subscriber sendCompleted];
-                           },
-                           ^(NSError* error){
-                               [subscriber sendError:error];
-                           }
-                           );
-             return nil;
-         }];
+         return PGShareKitCreateShareDataSignal(getParamBlock, serviceInfo);
     }]
      /* 分享到社交平台 */
      flattenMap:^RACStream *(RACTuple* tuple) {
@@ -96,6 +67,56 @@ void PGShareKitBLLShare(PGShareKitBLLGetSharInfo getParamBlock,
     }
     error:^(NSError *error) {
         if (fail) fail(error);
+    }];
+}
+
+static RACSignal* PGShareKitLoadConfigSignal(){
+    return [RACSignal createSignal:^RACDisposable *(id<RACSubscriber> subscriber) {
+        /* 从配置获取分享的社交平台 */
+        //        PGSKServiceInfoLoadConfig(nil, ^(NSArray<id<PGSKServiceInfo>> *services) {
+        //            [subscriber sendNext:services];
+        //            [subscriber sendCompleted];
+        //        }, ^(NSError *error) {
+        //            [subscriber sendError:error];
+        //        });
+        [subscriber sendNext:PGSKServiceInfoLoadCameraOrder()];
+        [subscriber sendCompleted];
+        return nil;
+    }];
+}
+
+static RACSignal* PGShareKitCreateShareDataSignal(PGShareKitBLLGetSharInfo getParamBlock,
+                                            NSObject<PGSKServiceInfo>* serviceInfo){
+    assert(nil != getParamBlock);
+    return [RACSignal createSignal:^RACDisposable *(id<RACSubscriber> subscriber) {
+        PGSKServiceSupportedDataType type = PGSKServiceSupportedDataTypeImage;
+        getParamBlock(type,
+                      ^(id param){
+                          [subscriber sendNext:RACTuplePack(param, serviceInfo, @(type))];
+                          [subscriber sendCompleted];
+                      },
+                      ^(NSError* error){
+                          [subscriber sendError:error];
+                      }
+                      );
+        return nil;
+    }];
+}
+
+static RACSignal* PGShareKitCreateShareSelectorSignal(NSArray<id<PGSKServiceInfo>> *services){
+    return [RACSignal createSignal:^RACDisposable *(id<RACSubscriber> subscriber) {
+        static PGSKServiceSelectorController* con = nil;
+        con = [PGSKServiceSelectorController controllerWithselectorView:[PGSKServiceDefaultSelectorView new]
+                                                                service:services];
+        [con showWithSelectBlock:^(id<PGSKServiceInfo> service) {
+            [subscriber sendNext:service];
+            [subscriber sendCompleted];
+            con = nil;
+        } cancelBlock:^(id sender) {
+            [subscriber sendError:PGShareKitReturnError()];
+            con = nil;
+        }];
+        return nil;
     }];
 }
 

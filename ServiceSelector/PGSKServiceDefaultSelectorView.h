@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "PGSKServiceSelector.h"
 
-@interface PGSKServiceSelectorView : UIView<PGSKServiceSelector>
+@interface PGSKServiceDefaultSelectorView : UIView<PGSKServiceSelector>
 
 @end
 
