@@ -18,6 +18,10 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    // Do any additional setup after loading the view, typically from a nib.
+}
+
+- (IBAction)shareAction:(id)sender{
     PGShareKitBLLShare(^(PGSKServiceSupportedDataType type,
                          PGSKDataBlock success,
                          PGSKFailBlock fail) {
@@ -35,7 +39,6 @@
     }, ^(NSError *error) {
         NSLog(@"error:%@", error);
     });
-    // Do any additional setup after loading the view, typically from a nib.
 }
 
 

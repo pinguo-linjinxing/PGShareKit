@@ -77,38 +77,42 @@ static const char * property_getTypeString( objc_property_t property )
 + (instancetype)instanceWithDictionary:(NSDictionary*)dict
                              transform:(PGSKTransformValueBlock)transform{
     NSObject* instance = [[self alloc] init];
-//    NSDictionary* allPropeties = [self allPropeties];
+    NSDictionary* allPropeties = [self allPropeties];
     [dict bk_each:^(id  _Nonnull key, id  _Nonnull obj) {
-//        if (nil == [allPropeties objectForKey:key]) {
+        void(^setKeyValue)() = ^{
+            if ([allPropeties objectForKey:key]) {
+                [instance setValue:obj forKey:key];
+            }else{
+                NSLog(@"%@类没有%@属性, %@", NSStringFromClass(self), key, @(__LINE__));
+            }
+        };
+        if (transform) {
+            id value = transform(key, obj);
+            if (value) {
+                [instance setValue:value forKey:key];
+            }else{
+                setKeyValue();
+//                NSLog(@"%@类%@属性transform后值%@为空, %@", NSStringFromClass(self), key, value, @(__LINE__));
+            }
+        }else{
+            setKeyValue();
+        }
+//        @try {
+//            [instance setValue:obj forKey:key];
+//        } @catch (NSException *exception) {
 //            if (transform) {
 //                id value = transform(key, obj);
 //                if (value) {
-//                    [instance setValue:value forKey:key];
-//                }else{
-//                    NSLog(@"%@类%@属性transform后值%@为空, %@", NSStringFromClass(self), key, value, @(__LINE__));
+//                    @try {
+//                        [instance setValue:value forKey:key];
+//                    } @catch (NSException *exception) {
+//                        NSLog(@"exception:%@, %@", exception, @(__LINE__));
+//                    }
 //                }
 //            }else{
-//                NSLog(@"%@类没有%@属性, %@", NSStringFromClass(self), key, @(__LINE__));
+//                NSLog(@"exception:%@, %@", exception, @(__LINE__));
 //            }
-//        }else{
-//            [instance setValue:obj forKey:key];
 //        }
-        @try {
-            [instance setValue:obj forKey:key];
-        } @catch (NSException *exception) {
-            if (transform) {
-                id value = transform(key, obj);
-                if (value) {
-                    @try {
-                        [instance setValue:value forKey:key];
-                    } @catch (NSException *exception) {
-                        NSLog(@"exception:%@, %@", exception, @(__LINE__));
-                    }
-                }
-            }else{
-                NSLog(@"exception:%@, %@", exception, @(__LINE__));
-            }
-        }
     }];
     return instance;
 }
