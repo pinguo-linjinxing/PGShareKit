@@ -87,6 +87,13 @@ static RACSignal* PGShareKitLoadConfigSignal(){
 }
 
 
+/**
+ 从调用客户端获取参数，有可能这时候需要上传视频等其它异步操作，因此采用getParamBlock异步方式
+
+ @param getParamBlock 调用端实现这个block，回传数据给pgsharekit
+ @param serviceInfo <#serviceInfo description#>
+ @return <#return value description#>
+ */
 static RACSignal* PGShareKitCreateShareDataSignal(PGShareKitBLLGetSharInfo getParamBlock,
                                             NSObject<PGSKServiceInfo>* serviceInfo){
     assert(nil != getParamBlock);
