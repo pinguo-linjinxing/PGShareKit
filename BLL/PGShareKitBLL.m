@@ -72,18 +72,20 @@ void PGShareKitBLLShare(PGShareKitBLLGetSharInfo getParamBlock,
 
 static RACSignal* PGShareKitLoadConfigSignal(){
     return [RACSignal createSignal:^RACDisposable *(id<RACSubscriber> subscriber) {
-        /* 从配置获取分享的社交平台 */
+        
+        /* 从配置获取分享的社交平台, 配置有可能从服务器加载，因此这里保留异步，建议从服务器加载 */
         //        PGSKServiceInfoLoadConfig(nil, ^(NSArray<id<PGSKServiceInfo>> *services) {
         //            [subscriber sendNext:services];
         //            [subscriber sendCompleted];
         //        }, ^(NSError *error) {
         //            [subscriber sendError:error];
         //        });
-        [subscriber sendNext:PGSKServiceInfoLoadCameraOrder()];
+        [subscriber sendNext:PGSKServiceInfoLoadCamera()];
         [subscriber sendCompleted];
         return nil;
     }];
 }
+
 
 static RACSignal* PGShareKitCreateShareDataSignal(PGShareKitBLLGetSharInfo getParamBlock,
                                             NSObject<PGSKServiceInfo>* serviceInfo){

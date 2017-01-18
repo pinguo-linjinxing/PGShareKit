@@ -43,7 +43,12 @@ NSString* PGSKServiceInfoGetAppKeyWithKey(NSString*key);
 UIImage* PGSKServiceInfoGetImageWithKey(NSString*key);
 //id<PGSKServiceInfo> PGSKServiceInfoLoadWithKey(NSString*key);
 
-NSArray<id<PGSKServiceInfo>>* PGSKServiceInfoLoadCameraOrder();
+/**
+ 加载相机的分享平台顺序
+
+ @return 返回平台配置信息
+ */
+NSArray<id<PGSKServiceInfo>>* PGSKServiceInfoLoadCamera();
 
 
 

@@ -134,7 +134,7 @@ static id PGSKServiceTransformBlock(NSString *keypath, id value){
 
  @return <#return value description#>
  */
-NSArray<id<PGSKServiceInfo>>* PGSKServiceInfoLoadCameraOrder(){
+NSArray<id<PGSKServiceInfo>>* PGSKServiceInfoLoadCamera(){
     NSDictionary* dict = PGSKLoadConfigSyn();
     NSDictionary* dictServices = dict[PGSKConfigDictionaryKeyServices];
     assert(nil != dictServices);
