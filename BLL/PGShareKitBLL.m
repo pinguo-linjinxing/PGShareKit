@@ -12,6 +12,7 @@
 #import "PGSKServiceSelectorController.h"
 #import "PGSKShareData.h"
 #import "NSArray+BlocksKit.h"
+#import "PGSKConfig.h"
 #import "PGSKServiceDefaultSelectorView.h"
 
 NSString *const kPKSGServiceDataDictKeyAuthor       = @"author";
@@ -96,7 +97,7 @@ static RACSignal* PGShareKitLoadConfigSignal(){
  */
 static RACSignal* PGShareKitCreateShareDataSignal(PGShareKitBLLGetSharInfo getParamBlock,
                                             NSObject<PGSKServiceInfo>* serviceInfo){
-    assert(nil != getParamBlock);
+    assert(getParamBlock);
     return [RACSignal createSignal:^RACDisposable *(id<RACSubscriber> subscriber) {
         PGSKServiceSupportedDataType type = PGSKServiceSupportedDataTypeImage;
         getParamBlock(type,
@@ -130,8 +131,8 @@ static RACSignal* PGShareKitCreateShareSelectorSignal(NSArray<id<PGSKServiceInfo
 }
 
 static RACSignal* PGShareKitCreateShareSignal(id data, id<PGSKServiceInfo> serviceInfo, PGSKServiceSupportedDataType type){
-//    assert(nil != dict[kPKSGServiceDataDictKeyDataType]);
-    //                 NSAssert(nil != dict[PKSGServiceDataDictKeyDataType], @"PKSGServiceDataDictKeyDataType必须要传");
+//    assert(dict[kPKSGServiceDataDictKeyDataType]);
+    //                 NSassert(dict[PKSGServiceDataDictKeyDataType], @"PKSGServiceDataDictKeyDataType必须要传");
 //    PGSKServiceSupportedDataType type = [dict[kPKSGServiceDataDictKeyDataType] unsignedIntegerValue];
     
 //    id data = PGShareKitCreateData(type, dict);

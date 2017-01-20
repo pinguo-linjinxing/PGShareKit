@@ -9,11 +9,12 @@
 
 typedef void(^PGSKVoidBlock)();
 typedef void(^PGSKDataBlock)(id data);
+typedef id(^PGSKReturnDataBlock)();
 typedef PGSKDataBlock PGSKSuccessBlock;
 typedef void(^PGSKFailBlock)(NSError* error);
 
 typedef void(^PGSKSelectBlock)(id sender, NSIndexPath* indexPath);
 typedef void(^PGSKSenderBlock)(id sender);
-typedef PGSKSenderBlock PGSKCanelBlock;
+typedef PGSKSenderBlock PGSKCancelBlock;
 
 

@@ -9,21 +9,22 @@
 #import <Foundation/Foundation.h>
 #import "PGSKTypes.h"
 #import <ReactiveCocoa/ReactiveCocoa.h>
+#import "BlocksDefines.h"
 
-FOUNDATION_EXPORT NSString *const kPKSGServiceDataDictKeyAuthor ;
-FOUNDATION_EXPORT NSString *const kPKSGServiceDataDictKeyDescription ;
-FOUNDATION_EXPORT NSString *const kPKSGServiceDataDictKeyThumbnail ;
-FOUNDATION_EXPORT NSString *const kPKSGServiceDataDictKeyThumbnailURL;
-FOUNDATION_EXPORT NSString *const kPKSGServiceDataDictKeyURL;
-FOUNDATION_EXPORT NSString *const kPKSGServiceDataDictKeyDataType;
+//FOUNDATION_EXPORT NSString *const kPKSGServiceDataDictKeyAuthor ;
+//FOUNDATION_EXPORT NSString *const kPKSGServiceDataDictKeyDescription ;
+//FOUNDATION_EXPORT NSString *const kPKSGServiceDataDictKeyThumbnail ;
+//FOUNDATION_EXPORT NSString *const kPKSGServiceDataDictKeyThumbnailURL;
+//FOUNDATION_EXPORT NSString *const kPKSGServiceDataDictKeyURL;
+//FOUNDATION_EXPORT NSString *const kPKSGServiceDataDictKeyDataType;
 
 
 /**
  调用者需要实现的block
 
- @param type 社交平台能支持的数据类型
- @param success 调用者成功获取到了数据，（有些需要上传视频到服务器，因此这里使用block，可以实现异步）
- @param fail 调用者获取数据失败了。
+ @param type 社交平台能支持的数据类型，调用者根据此类型构造参数，包括PGSKShareDataTextPOD，PGSKShareDataImagePOD，PGSKShareDataVideoPOD，PGSKShareDataWebPagePOD，PGSKShareDataComposerPOD
+ @param success 调用者成功获取到了数据，调用此block将数据传给PGShareKit（有些需要上传视频到服务器，因此这里使用block，可以实现异步）
+ @param fail 调用者获取数据失败了，调用此block将错误传给PGShareKit。
  */
 typedef void (^PGShareKitBLLGetSharInfo)(PGSKServiceSupportedDataType type, PGSKDataBlock success, PGSKFailBlock fail);
 

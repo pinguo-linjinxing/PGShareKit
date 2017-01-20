@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import "PGSKTypes.h"
+#import "BlocksDefines.h"
 
 typedef void(^PGSKConfigLoadCopyWritingSuccess)(NSString* title, NSString* message);
 

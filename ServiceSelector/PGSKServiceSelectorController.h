@@ -11,6 +11,7 @@
 #import "PGSKServiceInfo.h"
 #import "PGSKServiceDefaultSelectorView.h"
 #import "PGSKTypes.h"
+#import "BlocksDefines.h"
 
 
 typedef void(^PGSKSelectServiceBlock)(id<PGSKServiceInfo>service);
@@ -21,7 +22,7 @@ typedef void(^PGSKSelectServiceBlock)(id<PGSKServiceInfo>service);
 //@property(strong, readonly) id<PGSKServiceSelector> selectorView;
 + (instancetype)controllerWithselectorView:(id<PGSKServiceSelector>) selectorView
                                                   service:(NSArray<id<PGSKServiceInfo>>*)services;
-- (void)showWithSelectBlock:(PGSKSelectServiceBlock)select cancelBlock:(PGSKCanelBlock)cancel;
+- (void)showWithSelectBlock:(PGSKSelectServiceBlock)select cancelBlock:(PGSKCancelBlock)cancel;
 @end
 
 

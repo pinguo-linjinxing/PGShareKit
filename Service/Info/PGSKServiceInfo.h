@@ -10,6 +10,7 @@
 #import "PGSKShareData.h"
 #import "PGSKTypes.h"
 
+/* 各平台的ID定义 */
 FOUNDATION_EXPORT NSString *const kPKSGServiceWechat ;
 FOUNDATION_EXPORT NSString *const kPKSGServiceWechatMoments;
 FOUNDATION_EXPORT NSString *const kPKSGServiceQQ ;
@@ -39,17 +40,17 @@ FOUNDATION_EXPORT NSString *const kPKSGServiceSupportedTypeVideo   ;
 
 
 
-NSString* PGSKServiceInfoGetAppKeyWithKey(NSString*key);
-UIImage* PGSKServiceInfoGetImageWithKey(NSString*key);
-//id<PGSKServiceInfo> PGSKServiceInfoLoadWithKey(NSString*key);
 
-/**
- 加载相机的分享平台顺序
-
- @return 返回平台配置信息
- */
-NSArray<id<PGSKServiceInfo>>* PGSKServiceInfoLoadCamera();
-
+@interface PGSKServiceInfoPOD : NSObject<PGSKServiceInfo>
+@property(readonly, nonatomic, strong) NSString* name;
+@property(readonly, nonatomic, strong) NSString* key;
+@property(readonly, nonatomic, strong) NSString* appKey;
+@property(readonly, nonatomic, strong) NSString* appSecret;
+@property(readonly, nonatomic, strong) NSString* redirectURL;
+@property(readonly, nonatomic, strong) NSString* sloganImageName;
+@property(readonly, nonatomic, assign) PGSKServiceSupportedDataType supportedShareTypes;
+//+ (instancetype)serviceInfoPODWithDictionary:(NSDictionary*)dict;
+@end
 
 
 

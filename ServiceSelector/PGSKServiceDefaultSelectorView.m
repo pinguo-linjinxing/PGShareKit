@@ -8,6 +8,7 @@
 
 #import "PGSKServiceDefaultSelectorView.h"
 #import "UIButton+Layout.h"
+#import "PGSKConfig.h"
 
 @interface PGSKServiceDefaultSelectorView()<UICollectionViewDataSource>
 @property(nonatomic, strong) UICollectionView* collectionView;

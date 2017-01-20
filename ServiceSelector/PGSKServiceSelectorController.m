@@ -12,7 +12,7 @@
 @property(strong) NSArray<id<PGSKServiceInfo>>* services;
 @property(strong) id<PGSKServiceSelector> selectorView;
 @property(copy) PGSKSelectServiceBlock selectBlock;
-@property(copy) PGSKCanelBlock cancelBlock;
+@property(copy) PGSKCancelBlock cancelBlock;
 @end
 
 @implementation PGSKServiceSelectorController
@@ -26,7 +26,7 @@
     return controller;
 }
 
-- (void)showWithSelectBlock:(PGSKSelectServiceBlock)select cancelBlock:(PGSKCanelBlock)cancel{
+- (void)showWithSelectBlock:(PGSKSelectServiceBlock)select cancelBlock:(PGSKCancelBlock)cancel{
     self.selectBlock = select;
     self.cancelBlock = cancel;
     [self.selectorView show];

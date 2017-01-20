@@ -11,6 +11,7 @@
 //#import <TencentOpenAPI/QQApiInterfaceObject.h>
 #import <TencentOpenAPI/QQApiInterface.h>
 #import "PGSKServiceInfo.h"
+#import "PGSKConfig.h"
 
 @interface PGSKServiceQQ()<TencentSessionDelegate>
 @property (nonatomic) BOOL inited;
